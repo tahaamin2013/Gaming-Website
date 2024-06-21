@@ -1,4 +1,3 @@
-// please update required information
 const siteMetadata = {
   title: "StarBucks Menu With Prices",
   author: "WebKin Solutions",
@@ -19,4 +18,4 @@ const siteMetadata = {
   locale: "en-US",
 };
 
-export default siteMetadata;
+module.exports = siteMetadata;
