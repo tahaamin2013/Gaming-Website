@@ -13,5 +13,9 @@ export default function Loading({ children }: { children: React.ReactNode }) {
     return () => clearTimeout(delay);
   }, []);
 
-  return <div>{loading ? <Loader /> : <>{children}</>}</div>;
+  return (
+    <div>
+      <Loader>{children}</Loader>
+    </div>
+  );
 }

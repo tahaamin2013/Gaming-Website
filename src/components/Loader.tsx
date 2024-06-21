@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 
-export default function Loader() {
+export default function Loader({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -18,6 +18,7 @@ export default function Loader() {
 
   return (
     <div className="">
+      {loading ? (
         <div className="flex justify-center items-center h-screen w-screen">
           <Image
             src="/Loader.gif"
@@ -26,6 +27,9 @@ export default function Loader() {
             alt="Loader"
           ></Image>
         </div>
+      ) : (
+        <>{children}</>
+      )}
     </div>
   );
 }
