@@ -41,9 +41,9 @@ export default function FeaturedPostsDesign({
                 >
                   <div className="relative pt-[52.5%]">
                     <Image
-                   width={firstBlog.image.width}
-                   height={firstBlog.image.height}
-                   priority
+                      width={firstBlog.image.width}
+                      height={firstBlog.image.height}
+                      priority
                       alt={`Image of ${firstBlog.title}`}
                       blurDataURL={firstBlog.image.blurhashDataUrl}
                       className="w-full rounded-md border object-cover hover:opacity-90 dark:border-neutral-800"
@@ -77,7 +77,10 @@ export default function FeaturedPostsDesign({
                   {firstBlog.title}
                 </Link>
               </h1>
-              <Link aria-label={firstBlog.description.slice(0, 60)} href={firstBlog.url}>
+              <Link
+                aria-label={firstBlog.description.slice(0, 60)}
+                href={firstBlog.url}
+              >
                 <p className="text-md leading-snug text-slate-500 dark:text-neutral-400">
                   {firstBlog.description.slice(0, 250)}...
                 </p>
@@ -92,7 +95,6 @@ export default function FeaturedPostsDesign({
           <FeaturedLayout nameBlog={fourthBlog} />
         </div>
       </div>
-
     </div>
   );
 }

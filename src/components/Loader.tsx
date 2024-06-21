@@ -1,36 +1,35 @@
-import React, { useEffect, useRef } from "react";
-import lottie from "lottie-web";
-import animationData from "@/Loader.json";
+"use client";
 
-const Loader = () => {
-  const lottieContainerRef = useRef(null);
+import Image from "next/image";
+import React, { useState, useEffect } from "react";
+
+export default function Loader({ children }: { children: React.ReactNode }) {
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const container = lottieContainerRef.current;
+    // Simulating loading with setTimeout
+    const timeoutId = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Adjust the time as needed
 
-    if (container) {
-      const anim = lottie.loadAnimation({
-        container,
-        renderer: "svg",
-        loop: true,
-        autoplay: true,
-        animationData,
-      });
-
-      return () => {
-        anim.destroy();
-      };
-    }
+    // Clear the timeout to prevent memory leaks
+    return () => clearTimeout(timeoutId);
   }, []);
 
   return (
-    <div className="flex items-center justify-center h-screen">
-  <div ref={lottieContainerRef} style={{ width: "25%", height: "25%" }} />
-</div>
-
+    <div className="">
+      {loading ? (
+        <div className="flex justify-center items-center h-screen w-screen">
+          <Image
+            src="/Loader.gif"
+            width={500}
+            height={500}
+            alt="Loader"
+          ></Image>
+        </div>
+      ) : (
+        <>{children}</>
+      )}
+    </div>
   );
-};
-
-export default Loader;
-
-
+}

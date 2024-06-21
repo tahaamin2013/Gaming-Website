@@ -1,157 +1,56 @@
-import Footer from "@/src/components/Footer";
+  import Link from "next/link";
+  import React from "react";
 
-const privacy_and_policy = () => {
-  return (
-    <>
-      <div className="mb-20 flex mt-10 text-black/60 dark:text-white/60 flex-col gap-4 lg:mx-44 md:mx-16 sm:mx-4 space-y-3">
-        <h1 className="sm:text-5xl text-4xl text-black dark:text-white font-extrabold">
-          Privacy Policy for [Your Website Name]
-        </h1>
-        <p className="text-xl">
-          At [Your Website Name], accessible from [Your Website URL], the
-          privacy of our visitors is of utmost importance to us. This Privacy
-          Policy document outlines the types of information collected and
-          recorded by [Your Website Name] and how we utilize this information.
+  const PrivacyPolicy: React.FC = () => {
+    return (
+      <div className="max-w-4xl px-[20px]  mx-auto py-4 mt-6">
+        <h1 className="text-4xl font-bold mb-4">Privacy Policy</h1>
+        <p className="mb-4">
+          Welcome to our Starbucks Menu with Prices website. Your privacy is very
+          important to us, and we are committed to protecting your personal
+          information. This Privacy Policy outlines how we collect, use, and
+          safeguard your information.
         </p>
-        <p className="text-xl">
-          If you have any questions or need further clarification about our
-          Privacy Policy, please feel free to contact us.
+        <h2 className="text-2xl font-semibold mb-2">Information We Collect</h2>
+        <p className="mb-4">
+          We may collect personal information such as your name, email address,
+          you provide when you contact us.
         </p>
-        <h2 className="text-4xl font-bold text-black dark:text-white">
-          Consent
+        <h2 className="text-2xl font-semibold mb-2">
+          How We Use Your Information
         </h2>
-        <p className="text-xl">
-          By using our website, you consent to the terms outlined in this
-          Privacy Policy.
+        <p className="mb-4">
+          The information we collect is used to provide and improve our services,
+          respond to your inquiries.
         </p>
-        <h2 className="text-4xl font-bold text-black dark:text-white">
-          Information we collect
-        </h2>
-        <p className="text-xl">
-          The types of personal information we may request and the reasons for
-          requesting it will be transparently communicated to you when we ask
-          for your details. In instances where you directly contact us, we may
-          collect additional information, including your name, email address,
-          phone number, message content, and any attachments.
+        <h2 className="text-2xl font-semibold mb-2">Data Security</h2>
+        <p className="mb-4">
+          We implement various security measures to protect your personal
+          information from unauthorized access, use, or disclosure.
         </p>
-        <p className="text-xl">
-          When you register for an account, we may ask for your contact
-          information, such as your name, company name, address, email address,
-          and telephone number.
+        <h2 className="text-2xl font-semibold mb-2">Changes to This Policy</h2>
+        <p className="mb-4">
+          We may update this Privacy Policy from time to time. We will notify you
+          of any changes by posting the new Privacy Policy on this page.
         </p>
-        <h2 className="text-4xl font-bold text-black dark:text-white">
-          How we use your information
-        </h2>
-        <p className="text-xl">
-          We use the collected information for various purposes, including:
+        <h2 className="text-2xl font-semibold ">Contact Us</h2>
+        <p className="mb-4 flex items-center gap-3">
+          If you have any questions about this Privacy Policy, please{" "}
+          <Link
+            href="/contact-us"
+            className="bg-primary text-white px-4 py-2 rounded-full w-fit md:block hidden"
+          >
+            contact us
+          </Link>
         </p>
-        <ul className="list-disc ml-5 text-xl">
-          <li>Providing, operating, and maintaining our website</li>
-          <li>Improving, personalizing, and expanding our website</li>
-          <li>Analyzing how you use our website</li>
-          <li>
-            Developing new products, services, features, and functionality
-          </li>
-          <li>
-            Communicating with you for customer service, updates, and other
-            relevant information
-          </li>
-          <li>Sending emails</li>
-          <li>Detecting and preventing fraud</li>
-        </ul>
-        <h2 className="text-4xl font-bold text-black dark:text-white">
-          Log Files
-        </h2>
-        <p className="text-xl">
-          {" "}
-          [Your Website Name] follows standard log file procedures, which
-          include collecting internet protocol (IP) addresses, browser type,
-          Internet Service Provider (ISP), date and time stamp, referring/exit
-          pages, and possibly the number of clicks. This information is used for
-          analyzing trends, administering the site, tracking user movements, and
-          gathering demographic information. It is not linked to personally
-          identifiable information.
-        </p>
-        <h2 className="text-4xl font-bold text-black dark:text-white">
-          Cookies and Web Beacons
-        </h2>
-        <p className="text-xl">
-          Like many other websites, [Your Website Name] uses cookies to store
-          information, including visitors preferences and the pages they access.
-          This information is used to optimize user experiences by customizing
-          content based on browser type and other factors.
-        </p>
-        <h2 className="text-4xl font-bold text-black dark:text-white">
-          Third-party Services
-        </h2>
-        <p className="text-xl">
-          We may utilize third-party services, such as Google DoubleClick, which
-          may use cookies to serve ads based on users visits to our site and
-          other sites on the internet. Users can opt out of the use of DART
-          cookies by visiting the Google ad and content network Privacy Policy.
-        </p>
-        <h2 className="text-4xl font-bold text-black dark:text-white">
-          Advertising Partners Privacy Policies
-        </h2>
-        <p className="text-xl">
-          Please consult the Privacy Policies of our advertising partners, as
-          [Your Website Name] does not have control over the cookies used by
-          third-party advertisers.
-        </p>
-        <h2 className="text-4xl font-bold text-black dark:text-white">
-          Third Party Privacy Policies
-        </h2>
-        <p className="text-xl">
-          Our Privacy Policy does not apply to other advertisers or websites. We
-          recommend reviewing the Privacy Policies of these third-party ad
-          servers for detailed information.
-        </p>
-        <h2 className="text-4xl font-bold text-black dark:text-white">
-          CCPA Privacy Rights
-        </h2>
-        <p className="text-xl">
-          California consumers have the right to request disclosure of
-          categories and specific pieces of personal data collected, request
-          deletion of personal data, and opt-out of the sale of personal data.
-          To exercise these rights, please contact us.
-        </p>
-        <h2 className="text-4xl font-bold text-black dark:text-white">
-          GDPR Data Protection Rights
-        </h2>
-        <p className="text-xl">
-          All users have the right to access, rectify, erase, restrict
-          processing, object to processing, and data portability. To exercise
-          these rights, please contact us.
-        </p>
-        <h2 className="text-4xl font-bold text-black dark:text-white">
-          Children&apos;s Information
-        </h2>
-        <p className="text-xl">
-          [Your Website Name] does not knowingly collect Personal Identifiable
-          Information from children under the age of 13. Parents are encouraged
-          to monitor and guide their children&apos;s online activity. If you
-          believe your child provided information on our website, please contact
-          us, and we will promptly remove it.
-        </p>
-        <h2 className="text-4xl font-bold text-black dark:text-white">
-          Changes to This Privacy Policy
-        </h2>
-        <p className="text-xl">
-          We may update our Privacy Policy, and changes are effective
-          immediately upon posting on this page. Please review this page
-          periodically for updates.
-        </p>
-        <h2 className="text-4xl font-bold text-black dark:text-white">
-          Contact Us
-        </h2>
-        <p className="text-xl">
-          If you have any questions or suggestions about our Privacy Policy,
-          please contact us.
-        </p>{" "}
+        <Link
+          href="/contact-us"
+          className="bg-primary text-white px-4 py-2 w-fit rounded-full md:hidden block"
+        >
+          contact us
+        </Link>
       </div>
-      <Footer />
-    </>
-  );
-};
+    );
+  };
 
-export default privacy_and_policy;
+  export default PrivacyPolicy;

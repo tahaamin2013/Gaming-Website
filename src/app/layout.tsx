@@ -1,71 +1,49 @@
-import "../styles/fonts.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import React, { Suspense, lazy } from "react";
-import { cx } from "@/src/utils";
-import { Providers } from "./providers";
-import { ToastContainer } from 'react-toastify';
-
+import Navbar from "../components";
+import SubMenu from "../components/subMenu";
+import Loader from "../components/Loader";
+import Footer from "../components/footer";
+import Sidebar from "../components/sidebar";
+import GoTopButton from "../components/TopButton";
 import siteMetadata from "../utils/siteMetaData";
-const Header = lazy(() => import("@/src/components/Header"));
-const NextThemeProvider = lazy(() => import("@/src/providers/theme-provider"));
-const Loading = lazy(() => import("../providers/loading"));
 
-export const metadata = {
-  metadataBase: new URL(siteMetadata.siteUrl),
-  title: {
-    template: `%s | ${siteMetadata.title}`,
-    default: siteMetadata.title,
-  },
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: siteMetadata.title,
   description: siteMetadata.description,
-  openGraph: {
-    title: siteMetadata.title,
-    description: siteMetadata.description,
-    url: siteMetadata.siteUrl,
-    siteName: siteMetadata.title,
-    images: [siteMetadata.socialBanner],
-    locale: "en_US",
-    type: "website",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      noimageindex: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: siteMetadata.title,
-    images: [siteMetadata.socialBanner],
+  icons: {
+    icon: ["/icon.ico?v=4"],
+    apple: ["/icon.io?v=4"],
+    shortcut: ["icon.io"],
   },
 };
+
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en">
-      <body
-        className={cx(
-          "font-EuclidCircularB",
-          "font-mr"
-        )}
-      >
-        <NextThemeProvider>
-          <Header />
-          <Providers>
-              <Loading>
-                {children}
-                <ToastContainer />
-              </Loading>
-          </Providers>
-        </NextThemeProvider>
+      <head>
+        <meta name="theme-color" content="#0b7555" />
+      </head>
+      <body className={inter.className}>
+        <Loader>
+          <Navbar />
+          <main>
+            <SubMenu />
+            <div className="flex px-5 md:px-[90px] my-9">
+              <Sidebar />
+              <div className="w-full">{children}</div>
+            </div>
+          </main>
+          <Footer />
+        </Loader>
+        {/* <GoTopButton /> */}
       </body>
     </html>
   );

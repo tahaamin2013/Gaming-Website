@@ -4,9 +4,8 @@ import { allBlogs } from "@/.contentlayer/generated";
 import BlogLayoutThree from "@/src/components/Blog/BlogLayoutThree";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
-import SocialMediaIcons from "../Footer/SocialMediaIcons";
-import FeaturedPostsDesign from "./FeaturedPostsDesign";
-import Categories from "../Blog/Categories for Home";
+// import FeaturedPostsDesign from "./FeaturedPostsDesign";
+// import Categories from "../Blog/Categories for Home";
 import { slug } from "github-slugger";
 
 const HomePageComponent = () => {
@@ -53,10 +52,10 @@ const HomePageComponent = () => {
 
   return (
     <div>
-      <Categories
+      {/* <Categories
         categories={getUniqueCategories(allBlogs)}
         currentSlug="all"
-      />
+      /> */}
 
       <div className="grid grid-cols-1 items-center gap-5 sm:mt-2 mt-7 text-sm md:grid-cols-2">
         <div className="relative col-span-1">
@@ -69,14 +68,10 @@ const HomePageComponent = () => {
             dark:text-neutral-50 text-slate-900 transition-all dark:placeholder:text-neutral-400 dark:hover:bg-neutral-950"
           />
         </div>
-
-        <div className="col-span-1 flex flex-row flex-wrap gap-1 text-slate-600 dark:text-neutral-300 md:flex-nowrap justify-end">
-          <SocialMediaIcons gap="gap-10" />
-        </div>
       </div>
-      {!isTyping && (
+      {/* {!isTyping && (
         <FeaturedPostsDesign blogs={allBlogs} featuredBlogs={featuredBlogs} />
-      )}
+      )} */}
       <div className="mt-5 sm:mt-10 md:mt-24 sx:mt-32 flex flex-col gap-10">
         <h2 className="text-5xl font-bold text-black dark:text-white">Blogs</h2>
 

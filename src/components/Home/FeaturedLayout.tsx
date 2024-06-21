@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import Image from 'next/image'
+import Image from "next/image";
 
 const FeaturedLayout = ({ nameBlog }: { nameBlog: any }) => {
   return (
@@ -10,12 +10,12 @@ const FeaturedLayout = ({ nameBlog }: { nameBlog: any }) => {
           <Link aria-label={`Image of ${nameBlog.title}`} href={nameBlog.url}>
             <div className="relative pt-[52%]">
               <Image
-              width={nameBlog.image.width}
-              height={nameBlog.image.height}
-              priority
-              blurDataURL={nameBlog.image.blurhashDataUrl}
-              placeholder="blur"
-                      sizes="100vw"
+                width={nameBlog.image.width}
+                height={nameBlog.image.height}
+                priority
+                blurDataURL={nameBlog.image.blurhashDataUrl}
+                placeholder="blur"
+                sizes="100vw"
                 alt={`Image of ${nameBlog.title}`}
                 className="w-full rounded-md border object-cover hover:opacity-90 dark:border-neutral-800"
                 style={{
@@ -46,7 +46,10 @@ const FeaturedLayout = ({ nameBlog }: { nameBlog: any }) => {
             {nameBlog.title}
           </Link>
         </h1>
-        <Link aria-label={nameBlog.description.slice(0, 60)} href={nameBlog.url}>
+        <Link
+          aria-label={nameBlog.description.slice(0, 60)}
+          href={nameBlog.url}
+        >
           <p className="text-sm leading-snug text-slate-500 dark:text-neutral-400">
             {nameBlog.description.slice(0, 103)}...
           </p>
