@@ -7,19 +7,11 @@ export default function Loading({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate an asynchronous operation (e.g., fetching data) to set loading to false after a delay
     const delay = setTimeout(() => {
       setLoading(false);
-    }, 2000); // Adjust the delay as needed
-
-    // Clean up the timeout on component unmount
+    }, 2000);
     return () => clearTimeout(delay);
   }, []);
 
-  return (
-    <div>
-      {loading ?
-      <Loader /> : <>{children}</>}
-    </div>
-  );
+  return <div>{loading ? <Loader /> : <>{children}</>}</div>;
 }
