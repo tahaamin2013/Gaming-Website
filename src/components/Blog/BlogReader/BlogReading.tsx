@@ -19,7 +19,7 @@ const BlogReading = ({ parmy, blogy }: { parmy: any; blogy: any }) => {
   }
   return (
     <div>
-      <Navbar />
+   
       <div className="mb-20 px-[30px] md:px-[140px] mt-16 flex items-center justify-center flex-col text-center">
         <div className="w-full md:w-[900px] mb-2  text-center ">
           <h1 className="capitalize sm:text-3xl  md:text-4xl lg:text-5xl text-3xl font-bold ">
@@ -42,7 +42,6 @@ const BlogReading = ({ parmy, blogy }: { parmy: any; blogy: any }) => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
