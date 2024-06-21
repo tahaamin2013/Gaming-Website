@@ -1,33 +1,53 @@
+// Taha Amin Task to convert nextui to shadcn
+
 "use client";
 
 import siteMetadata from "@/src/utils/siteMetaData";
+import { Button } from "../../ui/button";
+// import {
+//   Modal,
+//   ModalBody,
+//   ModalContent,
+//   ModalFooter,
+//   ModalHeader,
+//   useDisclosure,
+// } from "@nextui-org/react";
 import {
-  Dropdown,
-  DropdownItem,
-  DropdownMenu,
-  DropdownTrigger,
-} from "@nextui-org/dropdown";
-import {
-  Button,
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  useDisclosure,
-} from "@nextui-org/react";
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/src/components/ui/dialog";
+
 import { ChevronRight } from "lucide-react";
 import React, { useEffect, useState } from "react";
-import { FaFacebook, FaHackerNews, FaRedditAlien, FaShareAlt, FaWhatsapp } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaHackerNews,
+  FaRedditAlien,
+  FaShareAlt,
+  FaWhatsapp,
+} from "react-icons/fa";
 import { FaBarsStaggered, FaLinkedinIn } from "react-icons/fa6";
 import { LuLink } from "react-icons/lu";
 import { RiTwitterXFill } from "react-icons/ri";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/src/components/ui/dropdown-menu"
+
 
 const Butybar = ({ blogy }: { blogy: any }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const { isOpen, onOpen, onClose } = useDisclosure();
   const [backdrop, setBackdrop] = React.useState("opaque");
   const iconClasses =
     "text-lg text-default-500 pointer-events-none flex-shrink-0";
@@ -56,7 +76,6 @@ const Butybar = ({ blogy }: { blogy: any }) => {
 
   const handleOpen = (backdrop: any) => {
     setBackdrop(backdrop);
-    onOpen();
   };
 
   const [scrollMargin, setScrollMargin] = useState(0);
@@ -75,51 +94,60 @@ const Butybar = ({ blogy }: { blogy: any }) => {
       });
     }
   };
-  
+
   const currentUrl = window.location.href;
-  
+
   const handleFacebookShare = () => {
     const encodedUrl = encodeURIComponent(currentUrl);
     const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}&quote=Check out this article`;
-  
+
     // Open the Facebook share link in a new window or redirect the current window
-    window.open(facebookShareUrl, '_blank');
+    window.open(facebookShareUrl, "_blank");
   };
-  
 
   const handleWhatsappShare = () => {
-    const whatsappShareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(`Check out this article: ${currentUrl}`)}`;
+    const whatsappShareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(
+      `Check out this article: ${currentUrl}`
+    )}`;
 
     // Open the WhatsApp share link in a new window or redirect the current window
-    window.open(whatsappShareUrl, '_blank');
+    window.open(whatsappShareUrl, "_blank");
   };
-  
+
   const handleTwitterShare = () => {
-    const twitterShareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(currentUrl)}&text=${encodeURIComponent('Check out this article')}`;
+    const twitterShareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+      currentUrl
+    )}&text=${encodeURIComponent("Check out this article")}`;
 
     // Open the Twitter share link in a new window or redirect the current window
-    window.open(twitterShareUrl, '_blank');
+    window.open(twitterShareUrl, "_blank");
   };
-  
+
   const handleRedditShare = () => {
-    const redditShareUrl = `https://www.reddit.com/submit?url=${encodeURIComponent(currentUrl)}&title=${encodeURIComponent('Check out this article')}`;
+    const redditShareUrl = `https://www.reddit.com/submit?url=${encodeURIComponent(
+      currentUrl
+    )}&title=${encodeURIComponent("Check out this article")}`;
 
     // Open the Reddit share link in a new window or redirect the current window
-    window.open(redditShareUrl, '_blank');
+    window.open(redditShareUrl, "_blank");
   };
-  
+
   const handleLinkedInShare = () => {
-    const linkedInShareUrl = `https://www.linkedin.com/shareArticle?url=${encodeURIComponent(currentUrl)}&title=${encodeURIComponent('Check out this article')}`;
+    const linkedInShareUrl = `https://www.linkedin.com/shareArticle?url=${encodeURIComponent(
+      currentUrl
+    )}&title=${encodeURIComponent("Check out this article")}`;
 
     // Open the LinkedIn share link in a new window or redirect the current window
-    window.open(linkedInShareUrl, '_blank');
+    window.open(linkedInShareUrl, "_blank");
   };
-  
+
   const handleHackerNewsShare = () => {
-    const hackerNewsShareUrl = `https://news.ycombinator.com/submitlink?u=${encodeURIComponent(currentUrl)}&t=${encodeURIComponent('Check out this article')}`;
+    const hackerNewsShareUrl = `https://news.ycombinator.com/submitlink?u=${encodeURIComponent(
+      currentUrl
+    )}&t=${encodeURIComponent("Check out this article")}`;
 
     // Open the Hacker News share link in a new window or redirect the current window
-    window.open(hackerNewsShareUrl, '_blank');
+    window.open(hackerNewsShareUrl, "_blank");
   };
 
   return (
@@ -131,129 +159,89 @@ const Butybar = ({ blogy }: { blogy: any }) => {
         }}
       >
         <Button
-          isIconOnly
           className="capitalize text-white rounded-full bg-transparent focus:border focus:border-white hover:bg-black"
-          onPress={() => handleOpen("tableofcontents")}
+          onClick={() => handleOpen("tableofcontents")}
           aria-label="Table of Contents"
         >
           <FaBarsStaggered />
         </Button>
-        <Modal backdrop="blur" isOpen={isOpen} onClose={onClose}>
-          <ModalContent>
-            {(onClose) => (
-              <>
-                <ModalHeader className="flex flex-col gap-1">
-                  Table of Contents
-                </ModalHeader>
-                <ModalBody>
-                  <ul className="mt-4 text-base">
-                    {blogy.toc.map((heading: any) => {
-                      return (
-                        <li
-                          key={`#${heading.slug}`}
-                          className="py-1"
-                          onClick={onClose}
-                        >
-                          <button
-                            // href={`#${heading.slug}`}
-                            onClick={(e) =>
-                              handleButtonClick(e, `${heading.slug}`)
-                            }
-                            data-level={heading.level}
-                            className="data-[level=two]:pl-0 data-[level=two]:pt-2 data-[level=two]:border-t border-solid border-zinc-500/10 data-[level=three]:pl-4 sm:data-[level=three]:pl-6 w-full hover:bg-alightdarkbg transition-all duration-400 rounded-lg p-3 flex items-center justify-start !text-left"
-                          >
-                            {heading.level === "three" ? (
-                              <span className="flex w-4 h-4 rounded-full mr-1 items-center justify-start">
-                                <ChevronRight className="-mr-4" />
-                              </span>
-                            ) : null}
+        <Dialog>
+          <DialogContent>
+            <DialogHeader className="flex flex-col gap-1">
+              Table of Contents
+            </DialogHeader>
+            <ul className="mt-4 text-base">
+              {blogy.toc.map((heading: any) => {
+                return (
+                  <li key={`#${heading.slug}`} className="py-1">
+                    <button
+                      // href={`#${heading.slug}`}
+                      onClick={(e) => handleButtonClick(e, `${heading.slug}`)}
+                      data-level={heading.level}
+                      className="data-[level=two]:pl-0 data-[level=two]:pt-2 data-[level=two]:border-t border-solid border-zinc-500/10 data-[level=three]:pl-4 sm:data-[level=three]:pl-6 w-full hover:bg-alightdarkbg transition-all duration-400 rounded-lg p-3 flex items-center justify-start !text-left"
+                    >
+                      {heading.level === "three" ? (
+                        <span className="flex w-4 h-4 rounded-full mr-1 items-center justify-start">
+                          <ChevronRight className="-mr-4" />
+                        </span>
+                      ) : null}
 
-                            <p className="pl-4">{heading.text}</p>
-                          </button>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </ModalBody>
-                <ModalFooter>
-                  <Button color="danger" variant="light" onPress={onClose}>
-                    Close
-                  </Button>
-                </ModalFooter>
-              </>
-            )}
-          </ModalContent>
-        </Modal>
+                      <p className="pl-4">{heading.text}</p>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+            <DialogFooter>
+              <Button variant="destructive" color="danger">
+                Close
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
 
-        <div className="h-7 bg-zinc-500 w-[0.25px]" />
-
-        <Dropdown className="ml-[150px] w-fit">
-          <DropdownTrigger>
+        {/*<div className="h-7 bg-zinc-500 w-[0.25px]" />
+         <DropdownMenu>
+          <DropdownMenuTrigger>
             <button className="w-10 h-10 p-2 hover:bg-black flex items-center justify-center transition-all duration-150 rounded-full">
               <FaShareAlt />
             </button>
-          </DropdownTrigger>
-          <DropdownMenu variant="faded">
-            <DropdownItem
+          </DropdownMenuTrigger>
+          <DropdownMenu>
+            <DropdownMenuItem
               key="permalink"
-              onPress={() =>
+              onClick={() =>
                 copyToClipboard(`${siteMetadata.siteUrl}${blogy.url}`)
               }
-              startContent={<LuLink className={iconClasses} />}
             >
-              Permalink
-            </DropdownItem>
-            
-            <DropdownItem
-              key="twitter"
-              startContent={<RiTwitterXFill className={iconClasses} />}
-              onPress={handleTwitterShare}
-            >
+              <LuLink className={iconClasses} /> Permalink
+            </DropdownMenuItem>
+            <DropdownMenuItem key="twitter" onClick={handleTwitterShare}>
+              <RiTwitterXFill className={iconClasses} />
               Twitter
-            </DropdownItem>
-            
-            <DropdownItem
-              key="reddit"
-              onPress={handleRedditShare}
-              startContent={<FaRedditAlien className={iconClasses} />}
-            >
+            </DropdownMenuItem>
+            <DropdownMenuItem key="reddit" onClick={handleRedditShare}>
+              <FaRedditAlien className={iconClasses} />
               Reddit
-            </DropdownItem>
-            
-            <DropdownItem
-              key="linkedin"
-              onPress={handleLinkedInShare}
-              startContent={<FaLinkedinIn className={iconClasses} />}
-            >
+            </DropdownMenuItem>
+            <DropdownMenuItem key="linkedin" onClick={handleLinkedInShare}>
+              <FaLinkedinIn className={iconClasses} />
               Linkedin
-            </DropdownItem>
-            
-            <DropdownItem
-              key="Hacker News"
-              onPress={handleHackerNewsShare}
-              startContent={<FaHackerNews className={iconClasses} />}
-            >
+            </DropdownMenuItem>
+            <DropdownMenuItem key="Hacker News" onClick={handleHackerNewsShare}>
+              <FaHackerNews className={iconClasses} />
               Hacker News
-            </DropdownItem>
-            
-            <DropdownItem
-              key="facebook"
-              startContent={<FaFacebook className={iconClasses} />}
-              onPress={handleFacebookShare}
-            >
+            </DropdownMenuItem>
+            <DropdownMenuItem key="facebook" onClick={handleFacebookShare}>
+              <FaFacebook className={iconClasses} />
               Facebook
-            </DropdownItem>
-            
-            <DropdownItem
-              key="whatsup"
-              onPress={handleWhatsappShare}
-              startContent={<FaWhatsapp className={iconClasses} />}
-            >
+            </DropdownMenuItem>
+            <DropdownMenuItem key="whatsup" onClick={handleWhatsappShare}>
+              <FaWhatsapp className={iconClasses} />
               Whats App
-            </DropdownItem>
-            
+            </DropdownMenuItem>
           </DropdownMenu>
-        </Dropdown>
+        </DropdownMenu> */}
       </nav>
     </header>
   );

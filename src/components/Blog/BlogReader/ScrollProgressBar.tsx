@@ -1,7 +1,7 @@
 'use client'
 
+import useReadingProgress from '@/src/components/Hooks/useReadingProgress';
 import React from 'react'
-import useReadingProgress from "@/src/components/Hooks/useReadingProgress"
 
 const ScrollProgressBar = () => {
   const completion = useReadingProgress();
