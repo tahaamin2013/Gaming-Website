@@ -53,7 +53,9 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function BlogPage({ params }) {
+import React from 'react'
+
+const BlogPage = ({ params }) => {
   const blog = allBlogs.find((blog) => blog._raw.flattenedPath === params.slug);
 
   let imageList = [siteMetadata.socialBanner];
@@ -94,3 +96,5 @@ export default function BlogPage({ params }) {
     </>
   );
 }
+
+export default BlogPage
