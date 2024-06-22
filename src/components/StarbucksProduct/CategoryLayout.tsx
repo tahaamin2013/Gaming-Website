@@ -17,7 +17,7 @@ const CategoryLayout = ({ item, delay, key }: any) => {
     threshold: 0.1,
   });
 
-  const [loading, setLoading] = useState(true);
+  const [loading] = useState(true);
 
   return (
     <Link href={item.link} key={key} className="w-fit">
@@ -36,17 +36,12 @@ const CategoryLayout = ({ item, delay, key }: any) => {
           transition={{ duration: 0.3, delay }}
           className="flex flex-row items-center gap-5"
         >
-          {loading && <div className="animate-pulse rounded-full h-5 w-"></div>}
           <Image
             src={item.image}
             alt={`Starbucks ${item.name} Image`}
             width={120}
             height={120}
             className={`rounded-full ${loading ? 'hidden' : 'block'}`}
-            draggable={false}
-            priority
-            sizes="100vw"
-            onLoadingComplete={() => setLoading(false)}
           />
           <div>
             <h1 className="text-xl w-full lg:w-[310px]">{item.name}</h1>
