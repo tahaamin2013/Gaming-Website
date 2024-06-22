@@ -38,7 +38,10 @@ const ProductLayout = ({ subItem, delay }: any) => {
   const [selectedSize, setSelectedSize] = useState(initialSize);
 
   return (
-    <Link href={`/articles/${subItem.link}`}>
+    <Link
+      href={`/articles/${subItem.link}`}
+      aria-label={`Starbucks ${subItem.name}`}
+    >
       <motion.div
         ref={ref}
         initial="hidden"

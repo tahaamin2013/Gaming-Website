@@ -14,6 +14,7 @@ const Footer = () => {
           <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4 lg:gap-8 py-8 max-w-xs mx-auto sm:max-w-2xl md:max-w-3xl lg:max-w-full">
             <div className="col-span-full mb-10 lg:col-span-2 lg:mb-0">
               <Link
+                aria-label="Starbucks Home"
                 href="/"
                 className="flex justify-center items-center w-full md:w-fit text-2xl gap-4 z-40 font-bold"
               >
@@ -78,13 +79,18 @@ const Footer = () => {
               <h4 className="font-medium mb-5">Menus</h4>
               <ul className="text-sm transition-all duration-500">
                 <li className="mb-4">
-                  <Link href="/" className="text-gray-600 hover:text-gray-900">
+                  <Link
+                    href="/"
+                    aria-label="Starbucks Menu"
+                    className="text-gray-600 hover:text-gray-900"
+                  >
                     Full Starbucks Menu
                   </Link>
                 </li>
                 <li className="mb-4">
                   <Link
                     href="/featured"
+                    aria-label="Starbucks Featured"
                     className="text-gray-600 hover:text-gray-900"
                   >
                     Featured Menu
@@ -98,6 +104,7 @@ const Footer = () => {
                 <li className="mb-4">
                   <Link
                     href="/hot-coffees"
+                    aria-label="Starbucks Hot Coffees"
                     className="text-gray-600 hover:text-gray-900"
                   >
                     Hot Coffees
@@ -106,6 +113,7 @@ const Footer = () => {
                 <li className="mb-4">
                   <Link
                     href="/cold-coffees"
+                    aria-label="Starbucks Hot Coffees"
                     className="text-gray-600 hover:text-gray-900"
                   >
                     Cold Coffees
@@ -114,6 +122,7 @@ const Footer = () => {
                 <li className="mb-4">
                   <Link
                     href="/hot-teas"
+                    aria-label="Starbucks Hot Teas"
                     className="text-gray-600 hover:text-gray-900"
                   >
                     Hot Teas
@@ -122,6 +131,7 @@ const Footer = () => {
                 <li className="mb-4">
                   <Link
                     href="/bottled-beverages"
+                    aria-label="Starbucks Bottled Beverages"
                     className="text-gray-600 hover:text-gray-900"
                   >
                     Bottled Beverages
@@ -130,6 +140,7 @@ const Footer = () => {
                 <li className="mb-4">
                   <Link
                     href="/milk-juice-and-more"
+                    aria-label="Starbucks Milk, Juice & More"
                     className="text-gray-600 hover:text-gray-900"
                   >
                     Milk, Juice & More
@@ -138,6 +149,7 @@ const Footer = () => {
                 <li className="mb-4">
                   <Link
                     href="/iced-tea-and-lemonade"
+                    aria-label="Starbucks Iced Tea and Lemonade"
                     className="text-gray-600 hover:text-gray-900"
                   >
                     Iced Tea and Lemonade
@@ -145,6 +157,7 @@ const Footer = () => {
                 </li>
                 <li className="mb-4">
                   <Link
+                    aria-label="Starbucks Refreshers® Beverages"
                     href="/starbucks-refreshers-beverages"
                     className="text-gray-600 hover:text-gray-900"
                   >
@@ -154,6 +167,7 @@ const Footer = () => {
                 <li className="mb-4">
                   <Link
                     href="/frappuccino-blended-beverages"
+                    aria-label="Starbucks Frappuccino® Blended Beverages"
                     className="text-gray-600 hover:text-gray-900"
                   >
                     Frappuccino® Blended Beverages
@@ -167,6 +181,7 @@ const Footer = () => {
                 <li className="mb-4">
                   <Link
                     href="/hot-breakfast"
+                    aria-label="Starbucks Hot Breakfast"
                     className="text-gray-600 hover:text-gray-900"
                   >
                     Hot Breakfast
@@ -175,6 +190,7 @@ const Footer = () => {
                 <li className="mb-4">
                   <Link
                     href="/oatmeal-and-yogurt"
+                    aria-label="Starbucks Oatmeal & Yogurt"
                     className="text-gray-600 hover:text-gray-900"
                   >
                     Oatmeal & Yogurt
@@ -183,6 +199,7 @@ const Footer = () => {
                 <li className="mb-4">
                   <Link
                     href="/bakery"
+                    aria-label="Starbucks Bakery"
                     className="text-gray-600 hover:text-gray-900"
                   >
                     Bakery
@@ -191,6 +208,7 @@ const Footer = () => {
                 <li className="mb-4">
                   <Link
                     href="/lunch"
+                    aria-label="Starbucks Lucn"
                     className="text-gray-600 hover:text-gray-900"
                   >
                     Lunch
@@ -199,6 +217,7 @@ const Footer = () => {
                 <li className="mb-4">
                   <Link
                     href="/snack-and-sweets"
+                    aria-label="Starbucks Snacks & Sweets"
                     className="text-gray-600 hover:text-gray-900"
                   >
                     Snacks & Sweets
@@ -214,6 +233,7 @@ const Footer = () => {
                 <li className="mb-4">
                   <Link
                     href="/whole-bean"
+                    aria-label="Starbucks Whole Bean"
                     className="text-gray-600 hover:text-gray-900"
                   >
                     Whole Bean
@@ -222,6 +242,7 @@ const Footer = () => {
                 <li className="mb-4">
                   <Link
                     href="/via-instant"
+                    aria-label="Starbucks VIA Instant"
                     className="text-gray-600 hover:text-gray-900"
                   >
                     VIA® Instant
@@ -240,6 +261,7 @@ const Footer = () => {
                 <li>
                   <Link
                     href="/terms-and-conditions"
+                    aria-label="Starbucks Terms And Conditions"
                     className="text-sm text-gray-500"
                   >
                     Terms And Conditions
@@ -248,6 +270,7 @@ const Footer = () => {
                 <li>
                   <Link
                     href="/privacy-policy"
+                    aria-label="Starbucks Privacy Policy"
                     className="text-sm text-gray-500"
                   >
                     Privacy Policy

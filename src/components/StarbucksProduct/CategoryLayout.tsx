@@ -18,7 +18,12 @@ const CategoryLayout = ({ item, delay, key }: any) => {
 
 
   return (
-    <Link href={item.link} key={key} className="w-fit">
+    <Link
+      href={item.link}
+      aria-label={`Starbucks ${item.name}`}
+      key={key}
+      className="w-fit"
+    >
       <motion.div
         ref={ref}
         initial="hidden"
@@ -39,7 +44,7 @@ const CategoryLayout = ({ item, delay, key }: any) => {
             alt={`Starbucks ${item.name} Image`}
             width={120}
             height={120}
-            className='rounded-full'
+            className="rounded-full"
           />
           <div>
             <h1 className="text-xl w-full lg:w-[310px]">{item.name}</h1>
