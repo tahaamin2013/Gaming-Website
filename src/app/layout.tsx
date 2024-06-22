@@ -43,7 +43,6 @@ export default function RootLayout({
           </main>
           <Footer />
         </Loader>
-        {/* <GoTopButton /> */}
       </body>
     </html>
   );

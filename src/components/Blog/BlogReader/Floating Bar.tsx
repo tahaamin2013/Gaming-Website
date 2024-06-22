@@ -1,17 +1,7 @@
-// Taha Amin Task to convert nextui to shadcn
-
 "use client";
 
 import siteMetadata from "@/src/utils/siteMetaData";
 import { Button } from "../../ui/button";
-// import {
-//   Modal,
-//   ModalBody,
-//   ModalContent,
-//   ModalFooter,
-//   ModalHeader,
-//   useDisclosure,
-// } from "@nextui-org/react";
 import {
   Dialog,
   DialogContent,

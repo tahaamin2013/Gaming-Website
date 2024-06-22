@@ -90,7 +90,7 @@ const MenuPage = () => {
             value={searchQuery}
             onChange={handleSearch}
             placeholder="Search..."
-            className="pr-10"
+            className="pr-10 outline-none"
           />
           {searchQuery.length > 0 ? (
             <button

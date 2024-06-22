@@ -1,7 +1,7 @@
 export default function manifest() {
     return {
-      name: 'TechSavvyInsights',
-      short_name: 'TechSavvy',
+      name: 'Starbucks Menu With Prices',
+      short_name: 'Starbucks',
       description: 'Next.js App',
       start_url: '/',
       display: 'standalone',

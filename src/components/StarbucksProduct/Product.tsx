@@ -32,18 +32,6 @@ const SelectedProduct: React.FC<{ productName: string }> = ({
 
   return (
     <div className="w-full text-left flex flex-col gap-3">
-      {/* {foundProduct.sizes ? (
-        foundProduct.sizes.map((size: Size, index: number) => (
-          <div key={index}>
-            <p>
-              {size.size}: {size.price}
-            </p>
-            <p>Calories: {size.calories}</p>
-          </div>
-        ))
-      ) : (
-        <p>No size information available</p>
-      )} */}
       <ProductContent subItem={foundProduct} />
     </div>
   );
