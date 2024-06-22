@@ -14,23 +14,16 @@ import CategoryLayout from "@/src/components/StarbucksProduct/CategoryLayout";
 import { Input } from "../ui/input";
 import ProductLayout from "../StarbucksProduct/ProductLayout";
 
-const variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
 
 const CategoryPageComponent: React.FC<{ name: string; link: string }> = ({
   name,
   link,
 }) => {
-  // Search
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [filteredMenu, setFilteredMenu] = useState<any[]>(Menu);
-
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     const query = event.target.value.toLowerCase();
     setSearchQuery(query);
-
     if (query === "") {
       setFilteredMenu(Menu);
     } else {
@@ -38,14 +31,12 @@ const CategoryPageComponent: React.FC<{ name: string; link: string }> = ({
         if (!category || !category.category) {
           return null;
         }
-
         const filteredCategoryItems = category.items.filter((item) => {
           if (!item || !item.name) {
             return false;
           }
           return item.name.toLowerCase().includes(query);
         });
-
         const filteredSubItems = category.items.reduce(
           (acc: any, curr: any) => {
             if (curr.subItems) {
@@ -83,27 +74,21 @@ const CategoryPageComponent: React.FC<{ name: string; link: string }> = ({
             subItems: filteredSubItems,
           };
         }
-
         return null;
       }).filter((category) => category !== null);
-
       setFilteredMenu(filteredItems);
     }
   };
-
   const clearSearch = () => {
     setSearchQuery("");
     setFilteredMenu(Menu);
   };
-
   const hotCoffeesCategory = Menu.find((category) =>
     category.items.some((item) => item.name === name)
   );
-
   if (!hotCoffeesCategory) {
     return <div>No {name} category found</div>;
   }
-
   const hotCoffees = hotCoffeesCategory.items.find(
     (item) => item.name === name
   );

@@ -1,37 +1,19 @@
 "use client";
-
-import { ArrowRight, ChevronDown, Menu } from "lucide-react";
-import { useRouter, usePathname } from "next/navigation";
+import { Menu } from "lucide-react";
+import { usePathname } from "next/navigation";
 import {
   Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
+  SheetContent,  SheetTrigger,
 } from "@/src/components/ui/sheet"; 
 import { useState, useEffect } from "react";
 import Goy from "../goy";
 
 const MobileNav = () => {
   const [isOpen, setOpen] = useState<boolean>(false);
-  const router = useRouter();
   const pathname = usePathname();
 
-  const openSidebar = () => setOpen(true);
   const closeSidebar = () => setOpen(false);
   const toggleOpen = () => setOpen((prev) => !prev);
-
-  const closeOnCurrent = (href: string) => {
-    if (pathname === href) {
-      closeSidebar();
-    }
-  };
-
-  const handleNavigation = (href: string) => {
-    router.push(href);
-    closeSidebar();
-  };
 
   useEffect(() => {
     // Close the sidebar when the pathname changes

@@ -1,7 +1,6 @@
 import { allBlogs } from "contentlayer/generated";
 import Image from "next/image";
 import React from "react";
-import Product from "../../StarbucksProduct/Product";
 
 interface BlogReaderImageProps {
   parmy: any;

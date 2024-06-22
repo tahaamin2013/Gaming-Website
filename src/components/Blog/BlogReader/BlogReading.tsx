@@ -2,11 +2,8 @@ import { allBlogs } from "contentlayer/generated";
 const BlogDetails = lazy(() => import("../BlogDetails"));
 const RenderMdx = lazy(() => import("../RenderMdx"));
 const Butybar = lazy(() => import("./Floating Bar"));
-const TableofContents = lazy(() => import("./TableofContents"));
-const BlogReaderImage = lazy(() => import("./image"));
 import { lazy } from "react";
 import Product from "../../StarbucksProduct/Product";
-import Footer from "../../footer";
 
 const BlogReading = ({ parmy, blogy }: { parmy: any; blogy: any }) => {
   const blog = allBlogs.find(

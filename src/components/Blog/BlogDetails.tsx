@@ -1,8 +1,4 @@
 import { format, parseISO } from "date-fns";
-import { slug } from "github-slugger";
-import { BookOpen } from "lucide-react";
-import Link from "next/link";
-import Product from "../StarbucksProduct/Product";
 
 const BlogDetails = ({ blog, slug: blogSlug }: { blog: any; slug: any }) => {
   return (

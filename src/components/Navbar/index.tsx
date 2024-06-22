@@ -1,31 +1,15 @@
 "use client";
 import MaxWidthWrapper from "@/src/components/MaxWidthWrapper";
-import { Button, buttonVariants } from "@/src/components/ui/button";
 import Link from "next/link";
 import MobileNav from "./MobileNav";
-import { ChevronDown, MessagesSquare } from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/src/components/ui/dropdown-menu";
-import { useState, useEffect } from "react";
+import {useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Goy from "../goy";
 
 const Navbar = () => {
-  const [showDescription, setShowDescription] = useState<string | null>(null);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const router = useRouter();
 
-  const handleLinkClick = (href: string) => {
-    setIsDropdownOpen(false);
-    router.push(href);
-  };
 
   useEffect(() => {
     const refreshLink = document.getElementById("refreshLink");
@@ -44,13 +28,6 @@ const Navbar = () => {
     };
   }, []);
 
-  const handleMouseEnter = (description: any) => {
-    setShowDescription(description);
-  };
-
-  const handleMouseLeave = () => {
-    setShowDescription(null);
-  };
 
   return (
     <nav className=" border-b-2 shadow-sm pt-3 pb-1 flex items-center inset-x-0 top-0 z-30 w-full border-gray-200 bg-white/75 backdrop-blur-lg transition-all">

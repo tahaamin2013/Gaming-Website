@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { BsSpotify } from "react-icons/bs";
-import { FaFacebookF, FaPinterestP, FaYoutube } from "react-icons/fa";
+import { FaFacebookF, FaPinterestP } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
 import { GrYoutube } from "react-icons/gr";
 
