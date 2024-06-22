@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
-import { useState } from "react";
 
 const variants = {
   hidden: { opacity: 0, y: 20 },
@@ -17,7 +16,6 @@ const CategoryLayout = ({ item, delay, key }: any) => {
     threshold: 0.1,
   });
 
-  const [loading] = useState(true);
 
   return (
     <Link href={item.link} key={key} className="w-fit">
@@ -41,7 +39,7 @@ const CategoryLayout = ({ item, delay, key }: any) => {
             alt={`Starbucks ${item.name} Image`}
             width={120}
             height={120}
-            className={`rounded-full ${loading ? 'hidden' : 'block'}`}
+            className='rounded-full'
           />
           <div>
             <h1 className="text-xl w-full lg:w-[310px]">{item.name}</h1>
