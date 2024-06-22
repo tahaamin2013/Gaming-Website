@@ -30,15 +30,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#0b7555" />
       </head>
       <body className={inter.className}>
-          <Navbar />
-          <main>
-            <SubMenu />
-            <div className="flex px-5 md:px-[90px] my-9">
-              <Sidebar />
-              <div className="w-full">{children}</div>
-            </div>
-          </main>
-          <Footer />
+       {children}
       </body>
     </html>
   );
