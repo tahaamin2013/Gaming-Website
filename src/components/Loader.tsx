@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import lottie from "lottie-web";
-import animationData from "../../loader.json";
+import animationData from "./loader.json";
 
 export default function Loader({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
