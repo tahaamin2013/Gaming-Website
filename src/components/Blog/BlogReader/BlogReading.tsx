@@ -24,10 +24,8 @@ const BlogReading = ({ parmy, blogy }: { parmy: any; blogy: any }) => {
 
         <Butybar blogy={blogy} />
         <div className="flex gap-1 md:gap-7 text-left">
-          {/* <TableofContents par  my={parmy} /> */}
           <div className="flex flex-col gap-7 md:flex-row">
             <div className="flex flex-col gap-2 items-center justify-center">
-              {/* <BlogReaderImage parmy={parmy} /> */}
               <Product productName={blog.ProductName} />
             </div>
             <div className="w-full md:w-[800px] mt-1">
