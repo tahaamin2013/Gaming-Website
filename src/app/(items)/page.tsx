@@ -83,7 +83,7 @@ const MenuPage = () => {
   return (
     <>
       <div className="flex justify-between items-center border-b mb-3 flex-col md:flex-row">
-        <h1 className="font-bold text-2xl mb-2">Menu</h1>
+        <h4 className="font-bold text-2xl mb-2">Menu</h4>
         <div className="mb-5 relative">
           <Input
             type="text"
