@@ -43,6 +43,7 @@ export default function Loader({ children }: { children: React.ReactNode }) {
               ref={lottieContainerRef}
               style={{ width: "35%", height: "35%" }}
             />
+            
             <div className="flex">
               Loading...
             </div>
