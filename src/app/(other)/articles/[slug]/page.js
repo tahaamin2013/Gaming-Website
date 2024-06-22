@@ -11,6 +11,7 @@ export async function generateMetadata({ params }) {
   const blog = allBlogs.find((blog) => blog._raw.flattenedPath === params.slug);
   if (!blog) {
     return;
+    
   }
 
   const publishedAt = new Date(blog.publishedAt).toISOString();
