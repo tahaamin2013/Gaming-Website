@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import SubMenu from "../components/subMenu";
-import Loader from "../components/Loader";
+
 import Footer from "../components/footer";
 import Sidebar from "../components/sidebar";
 import GoTopButton from "../components/TopButton";
@@ -32,7 +32,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#0b7555" />
       </head>
       <body className={inter.className}>
-        <Loader>
+
           <Navbar />
           <main>
             <SubMenu />
@@ -42,7 +42,7 @@ export default function RootLayout({
             </div>
           </main>
           <Footer />
-        </Loader>
+
       </body>
     </html>
   );
