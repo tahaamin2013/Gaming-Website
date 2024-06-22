@@ -26,6 +26,9 @@ export default function Loader({ children }: { children: React.ReactNode }) {
             autoPlay
             loop
             muted
+            onError={(e) => {
+              console.error("Video failed to load", e);
+            }}
           ></video>
         </div>
       ) : (
