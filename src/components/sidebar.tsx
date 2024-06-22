@@ -24,13 +24,7 @@ const Sidebar = () => {
               ))}
           </>
         ))}
-        {/* <Link
-            href="/hot-coffees"
-            className="text-gray-600 hover:text-gray-900"
-          >
-            Hot Coffees
-          </Link> */}
-      </div>
+             </div>
     </div>
   );
 };
