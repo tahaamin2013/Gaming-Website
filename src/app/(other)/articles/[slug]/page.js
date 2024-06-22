@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
 import ScrollProgressBar from '@/src/components/Blog/BlogReader/ScrollProgressBar';
+import BlogReading from '@/src/components/Blog/BlogReader/BlogReading';
 const Floating_Bar = dynamic(() => import('@/src/components/Blog/BlogReader/Floating Bar'), {
   ssr: false
 });
@@ -41,7 +42,7 @@ const BlogPage = ({ params }) => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <article>
-        <BlogReader parmy={params} blogy={blog} />
+        <BlogReading parmy={params} blogy={blog} />
         <Floating_Bar />
       </article>
     </>
