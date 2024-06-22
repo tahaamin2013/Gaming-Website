@@ -6,7 +6,7 @@ const siteMetadata = {
   language: "en-us",
   theme: "system", // system, dark or light
   siteUrl: "https://starbucks-menu-with-prices.net/", // your website URL
-  siteLogo: "/logo.svg",
+  siteLogo: "/icon.ico",
   socialBanner: "/socialBanner.webp", // add social banner in the public folder
   email: "aimahusnain@gmail.com",
   github: "https://github.com/aimahusnain",
