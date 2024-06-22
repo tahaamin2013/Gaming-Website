@@ -29,7 +29,12 @@ const ProductLayout = ({ subItem, delay }: any) => {
 
   const hasSize = subItem.size;
   const hasSizes = subItem.sizes && subItem.sizes.length > 0;
-  const initialSize = hasSizes ? subItem.sizes[0] : null;
+
+  const initialSize = hasSizes
+    ? subItem.sizes.find((sizeOption: any) => sizeOption.size === "Tall") ||
+      subItem.sizes[0]
+    : null;
+
   const [selectedSize, setSelectedSize] = useState(initialSize);
 
   return (
@@ -54,6 +59,7 @@ const ProductLayout = ({ subItem, delay }: any) => {
             alt={`Starbucks menu with prices featuring a ${subItem.name}`}
             width={118}
             height={118}
+            loading="lazy" // Lazy loads the image
             className="rounded-full max-w-[120rem] max-h-[118px]"
           />
           <div>
@@ -66,15 +72,11 @@ const ProductLayout = ({ subItem, delay }: any) => {
                     <h1 className="text-white">.</h1>
                   </>
                 )}
-                {(hasSize || subItem.size !== undefined) && (
-                  <h1>Size:</h1>
-                )}
+                {(hasSize || subItem.size !== undefined) && <h1>Size:</h1>}
                 {(hasSizes || subItem.calories !== undefined) && (
                   <h1>Calories:</h1>
                 )}
-                {(hasSizes || subItem.price !== undefined) && (
-                  <h1>Price:</h1>
-                )}
+                {(hasSizes || subItem.price !== undefined) && <h1>Price:</h1>}
               </div>
               <div className="flex flex-col gap-1">
                 {hasSizes ? (

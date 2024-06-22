@@ -11,7 +11,7 @@ import {
   SheetTrigger,
 } from "@/src/components/ui/sheet"; 
 import { useState, useEffect } from "react";
-import Goy from "./goy";
+import Goy from "../goy";
 
 const MobileNav = () => {
   const [isOpen, setOpen] = useState<boolean>(false);

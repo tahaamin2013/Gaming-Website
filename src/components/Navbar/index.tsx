@@ -15,10 +15,10 @@ import {
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import Goy from "./goy";
+import Goy from "../goy";
 
 const Navbar = () => {
-  const isAuthenticated = false;
+  const isAuthenticated = true;
   const [showDescription, setShowDescription] = useState<string | null>(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const router = useRouter();

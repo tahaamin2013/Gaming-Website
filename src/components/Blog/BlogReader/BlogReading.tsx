@@ -5,7 +5,6 @@ const Butybar = lazy(() => import("./Floating Bar"));
 const TableofContents = lazy(() => import("./TableofContents"));
 const BlogReaderImage = lazy(() => import("./image"));
 import { lazy } from "react";
-import Navbar from "../..";
 import Product from "../../StarbucksProduct/Product";
 import Footer from "../../footer";
 
@@ -14,12 +13,10 @@ const BlogReading = ({ parmy, blogy }: { parmy: any; blogy: any }) => {
     (blog: any) => blog._raw.flattenedPath === parmy.slug
   );
   if (!blog) {
-    // Handle case where the blog is not found
     return <div>Blog not found</div>;
   }
   return (
     <div>
-   <Navbar />
       <div className="mb-20 px-[30px] md:px-[140px] mt-16 flex items-center justify-center flex-col text-center">
         <div className="w-full md:w-[900px] mb-2  text-center ">
           <h1 className="capitalize sm:text-3xl  md:text-4xl lg:text-5xl text-3xl font-bold ">
@@ -30,7 +27,7 @@ const BlogReading = ({ parmy, blogy }: { parmy: any; blogy: any }) => {
 
         <Butybar blogy={blogy} />
         <div className="flex gap-1 md:gap-7 text-left">
-          {/* <TableofContents parmy={parmy} /> */}
+          {/* <TableofContents par  my={parmy} /> */}
           <div className="flex flex-col gap-7 md:flex-row">
             <div className="flex flex-col gap-2 items-center justify-center">
               {/* <BlogReaderImage parmy={parmy} /> */}
@@ -42,7 +39,6 @@ const BlogReading = ({ parmy, blogy }: { parmy: any; blogy: any }) => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
