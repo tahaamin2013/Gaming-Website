@@ -1,5 +1,5 @@
-import ScrollProgressBar from '@/src/components/Blog/BlogReader/ScrollProgressBar';
 import dynamic from 'next/dynamic';
+import ScrollProgressBar from '@/src/components/Blog/BlogReader/ScrollProgressBar';
 const Floating_Bar = dynamic(() => import('@/src/components/Blog/BlogReader/Floating Bar'), {
   ssr: false
 });
