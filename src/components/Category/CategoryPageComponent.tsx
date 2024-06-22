@@ -184,7 +184,11 @@ const CategoryPageComponent: React.FC<{ name: string; link: string }> = ({
                       {category.items &&
                         category.items.length > 0 &&
                         category.items.map((item: any, idx: any) => (
-                          <CategoryLayout key={idx} item={item} delay={idx * 0.1} />
+                          <CategoryLayout
+                            key={idx}
+                            item={item}
+                            delay={idx * 0.1}
+                          />
                         ))}
                       {category.subItems &&
                         category.subItems.length > 0 &&
@@ -217,4 +221,3 @@ const CategoryPageComponent: React.FC<{ name: string; link: string }> = ({
 };
 
 export default CategoryPageComponent;
-

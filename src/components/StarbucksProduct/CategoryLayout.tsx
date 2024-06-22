@@ -36,7 +36,7 @@ const CategoryLayout = ({ item, delay, key }: any) => {
           transition={{ duration: 0.3, delay }}
           className="flex flex-row items-center gap-5"
         >
-          {loading && <div className="animate-pulse rounded-full h-5 w-5"></div>}
+          {loading && <div className="animate-pulse rounded-full h-5 w-"></div>}
           <Image
             src={item.image}
             alt={`Starbucks ${item.name} Image`}
