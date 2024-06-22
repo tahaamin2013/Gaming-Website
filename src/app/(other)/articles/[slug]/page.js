@@ -1,5 +1,7 @@
 import dynamic from 'next/dynamic';
-const Floating_Bar = dynamic(() => import('@/src/components/Blog/BlogReader/Floating_Bar'), { ssr: false });
+const Floating_Bar = dynamic(() => import('@/src/components/Blog/BlogReader/Floating Bar'), {
+  ssr: false
+});
 
 // Inside your BlogPage component
 const BlogPage = ({ params }) => {
