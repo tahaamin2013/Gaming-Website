@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import lottie from "lottie-web";
-import animationData from "@/loader.json";
+import animationData from "../../loader.json";
 
 export default function Loader({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
@@ -43,10 +43,8 @@ export default function Loader({ children }: { children: React.ReactNode }) {
               ref={lottieContainerRef}
               style={{ width: "35%", height: "35%" }}
             />
-            
-            <div className="flex">
-              Loading...
-            </div>
+
+            <div className="flex">Loading...</div>
           </h1>
         </div>
       ) : (
