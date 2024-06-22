@@ -18,7 +18,6 @@ import Image from "next/image";
 import Goy from "../goy";
 
 const Navbar = () => {
-  const isAuthenticated = true;
   const [showDescription, setShowDescription] = useState<string | null>(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const router = useRouter();
@@ -64,14 +63,14 @@ const Navbar = () => {
               width={80}
               height={80}
               className="mt-1"
-            ></Image>
+            />
           </Link>
           <MobileNav />
           <div className="hidden text-lg gap-5 items-center space-x-4 sm:flex">
             <Goy id="Drinks">Drinks</Goy>
-            <Goy id="Foods">Food </Goy>
+            <Goy id="Foods">Food</Goy>
             <Goy id="At Home Coffee">At Home Coffee</Goy>
-            <Goy id="Merchandise">Merchandise </Goy>
+            <Goy id="Merchandise">Merchandise</Goy>
           </div>
         </div>
       </MaxWidthWrapper>

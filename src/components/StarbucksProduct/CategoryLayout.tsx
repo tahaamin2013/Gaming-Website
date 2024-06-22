@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
+import { useState } from "react";
 
 const variants = {
   hidden: { opacity: 0, y: 20 },
@@ -16,6 +17,8 @@ const CategoryLayout = ({ item, delay, key }: any) => {
     threshold: 0.1,
   });
 
+  const [loading, setLoading] = useState(true);
+
   return (
     <Link href={item.link} key={key} className="w-fit">
       <motion.div
@@ -26,7 +29,6 @@ const CategoryLayout = ({ item, delay, key }: any) => {
         transition={{ duration: 0.3, delay }}
         className="flex gap-8 flex-col md:flex-row"
       >
-        {/* <Link href={item.link} className="flex flex-row items-center gap-5"> */}
         <motion.div
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
@@ -34,19 +36,23 @@ const CategoryLayout = ({ item, delay, key }: any) => {
           transition={{ duration: 0.3, delay }}
           className="flex flex-row items-center gap-5"
         >
+          {loading && <div className="animate-pulse rounded-full h-5 w-5"></div>}
           <Image
             src={item.image}
-            alt={`Starbucks ${item.name} Image`} 
+            alt={`Starbucks ${item.name} Image`}
             width={120}
             height={120}
-            className="rounded-full"
+            className={`rounded-full ${loading ? 'hidden' : 'block'}`}
+            draggable={false}
+            priority
+            sizes="100vw"
+            onLoadingComplete={() => setLoading(false)}
           />
           <div>
             <h1 className="text-xl w-full lg:w-[310px]">{item.name}</h1>
             <p className="text-gray-600">{item.price}</p>
           </div>
         </motion.div>
-        {/* </Link> */}
       </motion.div>
     </Link>
   );
