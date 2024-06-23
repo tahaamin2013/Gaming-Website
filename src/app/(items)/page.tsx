@@ -6,6 +6,7 @@ import { Search, X } from "lucide-react";
 import CategoryLayout from "../../components/StarbucksProduct/CategoryLayout";
 import { Input } from "@/src/components/ui/input";
 import ProductLayout from "../../components/StarbucksProduct/ProductLayout";
+import Loader from "@/src/components/Loader";
 
 const MenuPage = () => {
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -108,44 +109,46 @@ const MenuPage = () => {
         </div>
       </div>
 
+      <Loader>
       {filteredMenu.length === 0 ? (
         <p className="text-xl text-center mb-[400px]">No results found.</p>
       ) : (
         filteredMenu.map((category: any) => (
-          <div key={category.category}>
-            <h2 className="text-2xl font-bold mt-6 mb-3">
-              {category.category}
-            </h2>
-            <div className="grid grid-cols-1">
-              <div className="grid grid-cols-1 border-t md:grid-cols-2 gap-x-[50px] w-full pt-6 gap-y-[50px]">
-                {category.items &&
-                  category.items.length > 0 &&
-                  category.items.map((item: any, idx: any) => (
-                    <CategoryLayout key={idx} item={item} delay={idx * 0.1} />
+            <div key={category.category}>
+              <h2 className="text-2xl font-bold mt-6 mb-3">
+                {category.category}
+              </h2>
+              <div className="grid grid-cols-1">
+                <div className="grid grid-cols-1 border-t md:grid-cols-2 gap-x-[50px] w-full pt-6 gap-y-[50px]">
+                  {category.items &&
+                    category.items.length > 0 &&
+                    category.items.map((item: any, idx: any) => (
+                      <CategoryLayout key={idx} item={item} delay={idx * 0.1} />
+                    ))}
+                </div>
+                {category.subItems &&
+                  category.subItems.length > 0 &&
+                  category.subItems.map((subItem: any, subIdx: any) => (
+                    <div key={subIdx} className="grid-cols-1">
+                      <h3 className="text-xl border-b pb-1 font-bold mt-4 mb-2">
+                        {subItem.category}
+                      </h3>
+                      <div className="grid grid-cols-2">
+                        {subItem.products.map((product: any, prodIdx: any) => (
+                          <ProductLayout
+                            key={prodIdx}
+                            subItem={product}
+                            delay={prodIdx * 0.1}
+                          />
+                        ))}
+                      </div>
+                    </div>
                   ))}
               </div>
-              {category.subItems &&
-                category.subItems.length > 0 &&
-                category.subItems.map((subItem: any, subIdx: any) => (
-                  <div key={subIdx} className="grid-cols-1">
-                    <h3 className="text-xl border-b pb-1 font-bold mt-4 mb-2">
-                      {subItem.category}
-                    </h3>
-                    <div className="grid grid-cols-2">
-                      {subItem.products.map((product: any, prodIdx: any) => (
-                        <ProductLayout
-                          key={prodIdx}
-                          subItem={product}
-                          delay={prodIdx * 0.1}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                ))}
             </div>
-          </div>
         ))
       )}
+          </Loader>
     </>
   );
 };
