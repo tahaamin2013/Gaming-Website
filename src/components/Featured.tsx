@@ -31,12 +31,12 @@ const Feetured: React.FC<FeeturedProps> = ({
             <div className="values-image object-contain">
               <Image
                 width={3700}
-                loading="lazy"
-                decoding="async"
-                className="rounded-l-xl w-full md:w-[800px]"
                 height={10770}
                 src={imageSrc}
                 alt={`Starbucks menu with prices featuring ${title} - ${description}`}
+                loading="lazy"
+                decoding="async"
+                className="rounded-l-xl w-full md:w-[800px]"
               />
             </div>
             <div
