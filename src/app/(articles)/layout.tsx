@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/src/components/Navbar";
 import Footer from "@/src/components/footer";
 import siteMetadata from "@/src/utils/siteMetaData";
+import SubMenu from "@/src/components/subMenu";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +30,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <Navbar />
+        <SubMenu />
         <main>
           <div className="flex px-5 md:px-[90px] my-9">
             <div className="w-full">{children}</div>
