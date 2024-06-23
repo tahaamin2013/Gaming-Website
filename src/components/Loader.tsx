@@ -49,7 +49,7 @@ export default function Loader({ children }: { children: React.ReactNode }) {
     <div className="">
       {loading ? (
         <div className="flex mt-4">
-          <h1 className="text-3xl flex justify-center items-center w-full  flex-col text-center font-bold">
+          <h1 className="text-3xl flex justify-center mb-[300px] items-center w-full  flex-col text-center font-bold">
             <div ref={lottieContainerRef} className="w-[240px] h-[240px]" />
 
             <div className="flex">Loading...</div>

@@ -83,6 +83,7 @@ const MenuPage = () => {
 
   return (
     <>
+    <Loader>
       <div className="flex justify-between items-center border-b mb-3 flex-col md:flex-row">
         <h4 className="font-bold text-2xl mb-2">Menu</h4>
         <div className="mb-5 relative">
@@ -109,7 +110,6 @@ const MenuPage = () => {
         </div>
       </div>
 
-      <Loader>
       {filteredMenu.length === 0 ? (
         <p className="text-xl text-center mb-[400px]">No results found.</p>
       ) : (
