@@ -63,21 +63,32 @@ const ProductLayout = ({ subItem, delay }: any) => {
           className="rounded-full max-w-[140rem] max-h-[130px]"
         />
         <div>
-          <h1 className="text-xl mb-1 w-full md:w-[260px]">{subItem.name}</h1>
+          <Link
+            href={`/articles/${subItem.link}`}
+            aria-label={`Starbucks ${subItem.name}`}
+          >
+            {" "}
+            <h1 className="text-xl mb-1 w-full md:w-[260px]">{subItem.name}</h1>
+          </Link>
           <div className="w-44 flex gap-6 justify-between items-center">
-            <div className="h-full gap-1 font-bold flex justify-between flex-col">
-              {hasSizes && (
-                <>
-                  <h1>Size:</h1>
-                  <h1 className="text-white">.</h1>
-                </>
-              )}
-              {(hasSize || subItem.size !== undefined) && <h1>Size:</h1>}
-              {(hasSizes || subItem.calories !== undefined) && (
-                <h1>Calories:</h1>
-              )}
-              {(hasSizes || subItem.price !== undefined) && <h1>Price:</h1>}
-            </div>
+            <Link
+              href={`/articles/${subItem.link}`}
+              aria-label={`Starbucks ${subItem.name}`}
+            >
+              <div className="h-full gap-1 font-bold flex justify-between flex-col">
+                {hasSizes && (
+                  <>
+                    <h1>Size:</h1>
+                    <h1 className="text-white">.</h1>
+                  </>
+                )}
+                {(hasSize || subItem.size !== undefined) && <h1>Size:</h1>}
+                {(hasSizes || subItem.calories !== undefined) && (
+                  <h1>Calories:</h1>
+                )}
+                {(hasSizes || subItem.price !== undefined) && <h1>Price:</h1>}
+              </div>
+            </Link>
             <div className="flex flex-col gap-1">
               {hasSizes ? (
                 <DropdownMenu>
@@ -114,27 +125,30 @@ const ProductLayout = ({ subItem, delay }: any) => {
                 </DropdownMenu>
               ) : null}
               {hasSizes && selectedSize ? (
-                <>
+                <Link
+                  href={`/articles/${subItem.link}`}
+                  aria-label={`Starbucks ${subItem.name}`}
+                >
                   <span>{selectedSize.size2}</span>
                   <p>{selectedSize.calories}</p>
                   <p>{selectedSize.price}</p>
-                </>
+                </Link>
               ) : (
-                <>
-                  {subItem.calories !== undefined && <p>{subItem.calories}</p>}
-                  {subItem.size !== undefined && <p>{subItem.size}</p>}
-                  {subItem.price !== undefined && <p>{subItem.price}</p>}
-                </>
+              
+                  <Link
+                    href={`/articles/${subItem.link}`}
+                    aria-label={`Starbucks ${subItem.name}`}
+                  >
+                    {subItem.calories !== undefined && (
+                      <p>{subItem.calories}</p>
+                    )}
+                    {subItem.size !== undefined && <p>{subItem.size}</p>}
+                    {subItem.price !== undefined && <p>{subItem.price}</p>}
+                  </Link>
+          
               )}
             </div>
           </div>
-          <Link
-            className=" text-primary font-semibold"
-            href={`/articles/${subItem.link}`}
-            aria-label={`Starbucks ${subItem.name}`}
-          >
-            View Blog
-          </Link>
         </div>
       </motion.div>
     </motion.div>
