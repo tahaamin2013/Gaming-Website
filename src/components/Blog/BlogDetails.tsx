@@ -9,7 +9,7 @@ const BlogDetails = ({ blog, slug: blogSlug }: { blog: any; slug: any }) => {
         #{blog.tags[0]}
       </p>
 
-      <time className="">
+      <time>
         {format(parseISO(blog.publishedAt), "LLL d, yyyy")}
       </time>
     </div>

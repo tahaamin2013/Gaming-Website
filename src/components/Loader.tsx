@@ -46,7 +46,7 @@ export default function Loader({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
-    <div className="">
+    <div>
       {loading ? (
         <div className="mt-[100px] mb-[200px]">
           <h1 className="text-3xl flex justify-center  items-center flex-col text-center font-bold">
