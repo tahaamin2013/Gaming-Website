@@ -31,6 +31,8 @@ const Feetured: React.FC<FeeturedProps> = ({
             <div className="values-image object-contain">
               <Image
                 width={3700}
+                loading="lazy"
+                decoding="async"
                 className="rounded-l-xl w-full md:w-[800px]"
                 height={10770}
                 src={imageSrc}
@@ -74,6 +76,8 @@ const Feetured: React.FC<FeeturedProps> = ({
             </div>
             <div className="values-image object-contain">
               <Image
+                loading="lazy"
+                decoding="async"
                 width={3700}
                 className="rounded-l-xl w-full md:h-500p md:w-[800px]"
                 height={10770}

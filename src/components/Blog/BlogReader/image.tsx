@@ -26,6 +26,8 @@ const BlogReaderImage: React.FC<BlogReaderImageProps> = ({ parmy }) => {
           alt={blog.title}
           draggable={false}
           width={blog.image.width}
+          loading="lazy"
+          decoding="async"
           height={blog.image.height}
           className="rounded-full h-[240px] w-[250px] object-cover myshadow-black"
           priority

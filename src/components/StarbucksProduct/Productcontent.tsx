@@ -56,6 +56,8 @@ const ProductContent = ({ subItem, delay }: any) => {
       >
         <Image
           src={subItem.image}
+          loading="lazy"
+          decoding="async"
           alt={`Starbucks menu with prices featuring a ${subItem.name}`}
           width={118}
           height={118}

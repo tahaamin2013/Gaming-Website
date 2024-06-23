@@ -40,6 +40,8 @@ const CategoryLayout = ({ item, delay, key }: any) => {
           className="flex flex-row items-center gap-5"
         >
           <Image
+            loading="lazy"
+            decoding="async"
             src={item.image}
             alt={`Starbucks ${item.name} Image`}
             width={120}

@@ -19,6 +19,8 @@ const Footer = () => {
                 className="flex justify-center items-center w-full md:w-fit text-2xl gap-4 z-40 font-bold"
               >
                 <Image
+                  loading="lazy"
+                  decoding="async"
                   src="/logo.svg"
                   alt="Starbucks icon"
                   width={120}

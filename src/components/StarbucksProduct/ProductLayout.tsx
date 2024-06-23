@@ -59,10 +59,11 @@ const ProductLayout = ({ subItem, delay }: any) => {
         >
           <Image
             src={subItem.image}
+            loading="lazy"
+            decoding="async"
             alt={`Starbucks menu with prices featuring a ${subItem.name}`}
             width={118}
             height={118}
-            loading="lazy" // Lazy loads the image
             className="rounded-full max-w-[120rem] max-h-[118px]"
           />
           <div>
