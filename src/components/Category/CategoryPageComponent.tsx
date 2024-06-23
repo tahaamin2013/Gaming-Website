@@ -191,6 +191,7 @@ const CategoryPageComponent: React.FC<{ name: string; link: string }> = ({
                         <Skeleton className="h-4 w-[30px]" />
                         <Skeleton className="h-4 w-[50px]" />
                       </div>
+                      <Skeleton className="h-4 w-[80px]" />
                     </div>
                   </div>
                 ))}
