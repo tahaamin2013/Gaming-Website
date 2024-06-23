@@ -113,51 +113,57 @@ const CategoryPageComponent: React.FC<{ name: string; link: string }> = ({
 
   return (
     <div className="w-full">
-      <Breadcrumb className="mb-3">
-        <BreadcrumbList>
-          <BreadcrumbItem>
-            <BreadcrumbLink href="/">Menu</BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator>
-            <Slash />
-          </BreadcrumbSeparator>
-          <BreadcrumbItem>
-            <BreadcrumbLink href={`/${link}`}>{name}</BreadcrumbLink>
-          </BreadcrumbItem>
-        </BreadcrumbList>
-      </Breadcrumb>
       <div>
         {loading ? (
-          <div className="flex justify-between pb-3 items-center border-b mb-3 flex-col md:flex-row">
-            <Skeleton className="h-6 mb-2 md:mt-2 w-[120px] rounded-xl" />
-            <Skeleton className="h-8 w-[200px] rounded-xl" />
-          </div>
-        ) : (
-          <div className="flex justify-between items-center border-b mb-3 flex-col md:flex-row">
-              <h4 className="font-bold text-2xl mb-2">{name}</h4>
-            <div className="mb-5 relative">
-              <Input
-                type="text"
-                value={searchQuery}
-                onChange={handleSearch}
-                placeholder="Search..."
-                className="pr-10 outline-none"
-              />
-              {searchQuery.length > 0 ? (
-                <button
-                  onClick={clearSearch}
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 outline-none focus:outline-none text-gray-500 hover:text-gray-700"
-                >
-                  <X size={26} />
-                </button>
-              ) : (
-                <Search
-                  size={21}
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
-                />
-              )}
+          <div>
+            <Skeleton className="h-6 mb-2 md:mt-2 w-[120px] rounded-lg" />
+            <div className="flex justify-between pb-3 items-center border-b mb-3 flex-col md:flex-row">
+              <Skeleton className="h-6 mb-2 md:mt-2 w-[120px] rounded-xl" />
+              <Skeleton className="h-8 w-[200px] rounded-xl" />
             </div>
           </div>
+        ) : (
+          <>
+            <Breadcrumb className="mb-3">
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink href="/">Menu</BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator>
+                  <Slash />
+                </BreadcrumbSeparator>
+                <BreadcrumbItem>
+                  <BreadcrumbLink href={`/${link}`}>{name}</BreadcrumbLink>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
+
+            <div className="flex justify-between items-center border-b mb-3 flex-col md:flex-row">
+              <h4 className="font-bold text-2xl mb-2">{name}</h4>
+              <div className="mb-5 relative">
+                <Input
+                  type="text"
+                  value={searchQuery}
+                  onChange={handleSearch}
+                  placeholder="Search..."
+                  className="pr-10 outline-none"
+                />
+                {searchQuery.length > 0 ? (
+                  <button
+                    onClick={clearSearch}
+                    className="absolute right-3 top-1/2 transform -translate-y-1/2 outline-none focus:outline-none text-gray-500 hover:text-gray-700"
+                  >
+                    <X size={26} />
+                  </button>
+                ) : (
+                  <Search
+                    size={21}
+                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
+                  />
+                )}
+              </div>
+            </div>
+          </>
         )}
         <div className="flex flex-col gap-12">
           {loading ? (
