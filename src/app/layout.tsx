@@ -6,6 +6,7 @@ import SubMenu from "../components/subMenu";
 import Footer from "../components/footer";
 import Sidebar from "../components/sidebar";
 import siteMetadata from "../utils/siteMetaData";
+import { cx } from "../utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,9 +30,7 @@ export default function RootLayout({
       <head>
         <meta name="theme-color" content="#0b7555" />
       </head>
-      <body className={inter.className}>
-       {children}
-      </body>
+      <body className={cx("font-EuclidCircularB", "font-mr")}>{children}</body>
     </html>
   );
 }
