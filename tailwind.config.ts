@@ -68,12 +68,16 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "bounce-1": "bounce 1s infinite 0.2s",
+        "bounce-2": "bounce 1s infinite 0.4s",
+        "bounce-3": "bounce 1s infinite 0.6s",
       },
     },
   },
-  plugins: [require("tailwindcss-animate"),
-     require('@tailwindcss/forms'),
-    require('@tailwindcss/typography'),
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/typography"),
   ],
 } satisfies Config;
 
