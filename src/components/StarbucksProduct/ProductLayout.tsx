@@ -129,7 +129,7 @@ const ProductLayout = ({ subItem, delay }: any) => {
             </div>
           </div>
           <Link
-            className=" text-primary"
+            className=" text-primary font-semibold"
             href={`/articles/${subItem.link}`}
             aria-label={`Starbucks ${subItem.name}`}
           >
