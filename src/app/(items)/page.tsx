@@ -90,37 +90,44 @@ const MenuPage = () => {
 
   return (
     <>
-      <div className="flex justify-between items-center border-b mb-3 flex-col md:flex-row">
-        <h4 className="font-bold text-2xl mb-2">Menu</h4>
-        <div className="mb-5 relative">
-          <Input
-            type="text"
-            value={searchQuery}
-            onChange={handleSearch}
-            placeholder="Search..."
-            className="pr-10 outline-none"
-          />
-          {searchQuery.length > 0 ? (
-            <button
-              onClick={clearSearch}
-              className="absolute right-3 top-1/2 transform -translate-y-1/2 outline-none focus:outline-none text-gray-500 hover:text-gray-700"
-            >
-              <X size={26} />
-            </button>
-          ) : (
-            <Search
-              size={21}
-              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
-            />
-          )}
+      {loading ? (
+        <div className="flex justify-between pb-3 items-center border-b mb-3 flex-col md:flex-row">
+          <Skeleton className="h-6 mb-2 md:mt-2 w-[120px] rounded-xl" />
+          <Skeleton className="h-8 w-[200px] rounded-xl" />
         </div>
-      </div>
+      ) : (
+        <div className="flex justify-between items-center border-b mb-3 flex-col md:flex-row">
+          <h4 className="font-bold text-2xl mb-2">Menu</h4>
+          <div className="mb-5 relative">
+            <Input
+              type="text"
+              value={searchQuery}
+              onChange={handleSearch}
+              placeholder="Search..."
+              className="pr-10 outline-none"
+            />
+            {searchQuery.length > 0 ? (
+              <button
+                onClick={clearSearch}
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 outline-none focus:outline-none text-gray-500 hover:text-gray-700"
+              >
+                <X size={26} />
+              </button>
+            ) : (
+              <Search
+                size={21}
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
+              />
+            )}
+          </div>
+        </div>
+      )}
 
       {loading ? (
         <div>
           <Skeleton className="h-6 w-full rounded-xl" />
           <div className="space-y-4 grid grid-cols-1 md:mt-3 mt-[50px] md:grid-cols-2 gap-[20px]">
-            {Array.from({ length: 20 }).map((_, index) => (
+            {Array.from({ length: 23 }).map((_, index) => (
               <div key={index} className="flex items-center space-x-4">
                 <Skeleton className="h-[80px] w-[84px] rounded-full" />
                 <div className="space-y-2">

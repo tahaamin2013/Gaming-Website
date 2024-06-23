@@ -127,16 +127,21 @@ const CategoryPageComponent: React.FC<{ name: string; link: string }> = ({
         </BreadcrumbList>
       </Breadcrumb>
       <div>
-        <div className="flex w-full justify-between">
-          <div className="flex mb-10 pb-3 justify-between w-full items-center border-b flex-col md:flex-row">
-            <h1 className="font-bold text-2xl mb-2 capitalize">{name}</h1>
-            <div className="relative bottom-1">
+        {loading ? (
+          <div className="flex justify-between pb-3 items-center border-b mb-3 flex-col md:flex-row">
+            <Skeleton className="h-6 mb-2 md:mt-2 w-[120px] rounded-xl" />
+            <Skeleton className="h-8 w-[200px] rounded-xl" />
+          </div>
+        ) : (
+          <div className="flex justify-between items-center border-b mb-3 flex-col md:flex-row">
+              <h4 className="font-bold text-2xl mb-2">{name}</h4>
+            <div className="mb-5 relative">
               <Input
                 type="text"
                 value={searchQuery}
                 onChange={handleSearch}
                 placeholder="Search..."
-                className="pr-10 mt-2"
+                className="pr-10 outline-none"
               />
               {searchQuery.length > 0 ? (
                 <button
@@ -153,7 +158,7 @@ const CategoryPageComponent: React.FC<{ name: string; link: string }> = ({
               )}
             </div>
           </div>
-        </div>
+        )}
         <div className="flex flex-col gap-12">
           {loading ? (
             <>
@@ -164,19 +169,19 @@ const CategoryPageComponent: React.FC<{ name: string; link: string }> = ({
                     <Skeleton className="h-[80px] w-[84px] rounded-full" />
                     <div className="space-y-2">
                       <Skeleton className="h-4 w-[170px]" />
-                      <div className="flex justify-between mb-6">
+                      <div className="flex justify-between">
                         <Skeleton className="h-4 w-[30px]" />
                         <Skeleton className="h-4 w-[50px]" />
                       </div>
-                      <div className="flex justify-between mb-6">
+                      <div className="flex justify-between">
                         <Skeleton className="h-0 w-[0px]" />
                         <Skeleton className="h-4 w-[50px]" />
                       </div>
-                      <div className="flex justify-between mb-6">
+                      <div className="flex justify-between">
                         <Skeleton className="h-4 w-[30px]" />
                         <Skeleton className="h-4 w-[50px]" />
                       </div>
-                      <div className="flex justify-between mb-6">
+                      <div className="flex justify-between">
                         <Skeleton className="h-4 w-[30px]" />
                         <Skeleton className="h-4 w-[50px]" />
                       </div>
