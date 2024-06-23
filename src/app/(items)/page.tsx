@@ -1,16 +1,23 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Menu } from "@/lib/menuItems";
 import { Search, X } from "lucide-react";
 import CategoryLayout from "../../components/StarbucksProduct/CategoryLayout";
 import { Input } from "@/src/components/ui/input";
 import ProductLayout from "../../components/StarbucksProduct/ProductLayout";
 import Loader from "@/src/components/Loader";
+import { Skeleton } from "@/src/components/ui/skeleton";
 
 const MenuPage = () => {
   const [searchQuery, setSearchQuery] = useState<string>("");
-  const [filteredMenu, setFilteredMenu] = useState<any[]>(Menu);
+  const [filteredMenu, setFilteredMenu] = useState<any[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    setFilteredMenu(Menu);
+    setLoading(false);
+  }, []);
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     const query = event.target.value.toLowerCase();
@@ -83,7 +90,6 @@ const MenuPage = () => {
 
   return (
     <>
-    <Loader>
       <div className="flex justify-between items-center border-b mb-3 flex-col md:flex-row">
         <h4 className="font-bold text-2xl mb-2">Menu</h4>
         <div className="mb-5 relative">
@@ -110,45 +116,58 @@ const MenuPage = () => {
         </div>
       </div>
 
-      {filteredMenu.length === 0 ? (
+      {loading ? (
+        <div>
+          <Skeleton className="h-6 w-full rounded-xl" />
+          <div className="space-y-4 grid grid-cols-1 md:mt-3 mt-[50px] md:grid-cols-2 gap-[20px]">
+            {Array.from({ length: 20 }).map((_, index) => (
+              <div key={index} className="flex items-center space-x-4">
+                <Skeleton className="h-[80px] w-[84px] rounded-full" />
+                <div className="space-y-2">
+                  <Skeleton className="h-4 w-[170px]" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ) : filteredMenu.length === 0 ? (
         <p className="text-xl text-center mb-[400px]">No results found.</p>
       ) : (
         filteredMenu.map((category: any) => (
-            <div key={category.category}>
-              <h2 className="text-2xl font-bold mt-6 mb-3">
-                {category.category}
-              </h2>
-              <div className="grid grid-cols-1">
-                <div className="grid grid-cols-1 border-t md:grid-cols-2 gap-x-[50px] w-full pt-6 gap-y-[50px]">
-                  {category.items &&
-                    category.items.length > 0 &&
-                    category.items.map((item: any, idx: any) => (
-                      <CategoryLayout key={idx} item={item} delay={idx * 0.1} />
-                    ))}
-                </div>
-                {category.subItems &&
-                  category.subItems.length > 0 &&
-                  category.subItems.map((subItem: any, subIdx: any) => (
-                    <div key={subIdx} className="grid-cols-1">
-                      <h3 className="text-xl border-b pb-1 font-bold mt-4 mb-2">
-                        {subItem.category}
-                      </h3>
-                      <div className="grid grid-cols-2">
-                        {subItem.products.map((product: any, prodIdx: any) => (
-                          <ProductLayout
-                            key={prodIdx}
-                            subItem={product}
-                            delay={prodIdx * 0.1}
-                          />
-                        ))}
-                      </div>
-                    </div>
+          <div key={category.category}>
+            <h2 className="text-2xl font-bold mt-6 mb-3">
+              {category.category}
+            </h2>
+            <div className="grid grid-cols-1">
+              <div className="grid grid-cols-1 border-t md:grid-cols-2 gap-x-[50px] w-full pt-6 gap-y-[50px]">
+                {category.items &&
+                  category.items.length > 0 &&
+                  category.items.map((item: any, idx: any) => (
+                    <CategoryLayout key={idx} item={item} delay={idx * 0.1} />
                   ))}
               </div>
+              {category.subItems &&
+                category.subItems.length > 0 &&
+                category.subItems.map((subItem: any, subIdx: any) => (
+                  <div key={subIdx} className="grid-cols-1">
+                    <h3 className="text-xl border-b pb-1 font-bold mt-4 mb-2">
+                      {subItem.category}
+                    </h3>
+                    <div className="grid grid-cols-2">
+                      {subItem.products.map((product: any, prodIdx: any) => (
+                        <ProductLayout
+                          key={prodIdx}
+                          subItem={product}
+                          delay={prodIdx * 0.1}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                ))}
             </div>
+          </div>
         ))
       )}
-          </Loader>
     </>
   );
 };
