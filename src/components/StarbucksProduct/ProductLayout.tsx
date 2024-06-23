@@ -53,15 +53,20 @@ const ProductLayout = ({ subItem, delay }: any) => {
         transition={{ duration: 0.3, delay }}
         className="flex flex-row mb-6 items-center gap-5"
       >
-        <Image
-          src={subItem.image}
-          loading="lazy"
-          decoding="async"
-          alt={`Starbucks menu with prices featuring a ${subItem.name}`}
-          width={130}
-          height={140}
-          className="rounded-full max-w-[140rem] max-h-[130px]"
-        />
+        <Link
+          href={`/articles/${subItem.link}`}
+          aria-label={`Starbucks ${subItem.name}`}
+        >
+          <Image
+            src={subItem.image}
+            loading="lazy"
+            decoding="async"
+            alt={`Starbucks menu with prices featuring a ${subItem.name}`}
+            width={130}
+            height={140}
+            className="rounded-full max-w-[140rem] max-h-[130px]"
+          />
+        </Link>
         <div>
           <Link
             href={`/articles/${subItem.link}`}
@@ -134,18 +139,14 @@ const ProductLayout = ({ subItem, delay }: any) => {
                   <p>{selectedSize.price}</p>
                 </Link>
               ) : (
-              
-                  <Link
-                    href={`/articles/${subItem.link}`}
-                    aria-label={`Starbucks ${subItem.name}`}
-                  >
-                    {subItem.calories !== undefined && (
-                      <p>{subItem.calories}</p>
-                    )}
-                    {subItem.size !== undefined && <p>{subItem.size}</p>}
-                    {subItem.price !== undefined && <p>{subItem.price}</p>}
-                  </Link>
-          
+                <Link
+                  href={`/articles/${subItem.link}`}
+                  aria-label={`Starbucks ${subItem.name}`}
+                >
+                  {subItem.calories !== undefined && <p>{subItem.calories}</p>}
+                  {subItem.size !== undefined && <p>{subItem.size}</p>}
+                  {subItem.price !== undefined && <p>{subItem.price}</p>}
+                </Link>
               )}
             </div>
           </div>
