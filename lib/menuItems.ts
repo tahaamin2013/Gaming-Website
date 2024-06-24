@@ -117,7 +117,7 @@ export const Menu: Category[] = [
               {
                 name: "Featured Medium Roast Pike Place® Roast",
                 image: "/to.avif",
-                link: "",
+                link: "Featured-Medium-Roast-Pike-Place-Roast",
                 sizes: [
                   {
                     size: "Short",
@@ -148,7 +148,7 @@ export const Menu: Category[] = [
               {
                 name: "Starbucks Odyssey Blend® Clover Vertica™",
                 image: "/Starbucks Odyssey Blend® Clover Vertica™.avif",
-                link: "",
+                link: "Starbucks-Odyssey-Blend-Clover-Vertica",
                 sizes: [
                   {
                     size: "Short",
@@ -179,7 +179,7 @@ export const Menu: Category[] = [
               {
                 name: "Featured Decaf Roast Decaf Pike Place® Roast",
                 image: "/to.avif",
-                link: "",
+                link: "Featured-Decaf-Roast-Decaf-Pike-Place-Roast",
                 sizes: [
                   {
                     size: "Short",
@@ -210,7 +210,7 @@ export const Menu: Category[] = [
               {
                 name: "Caffè Misto",
                 image: "/Caffè Misto.avif",
-                link: "",
+                link: "Caffe-Misto",
                 sizes: [
                   {
                     size: "Short",
@@ -241,7 +241,7 @@ export const Menu: Category[] = [
               {
                 name: "Featured Blonde Roast",
                 image: "/to.avif",
-                link: "",
+                link: "Featured-Blonde-Roast",
                 sizes: [
                   {
                     size: "Short",
@@ -270,40 +270,9 @@ export const Menu: Category[] = [
                 ],
               },
               {
-                name: "Featured Medium Roast Pike Place® Roast",
-                image: "/Starbucks Odyssey Blend® Clover Vertica™.avif",
-                link: "",
-                sizes: [
-                  {
-                    size: "Short",
-                    price: "$3.35",
-                    calories: 5,
-                    size2: "8 fl oz",
-                  },
-                  {
-                    size: "Tall",
-                    price: "$3.45",
-                    calories: 5,
-                    size2: "12 fl oz",
-                  },
-                  {
-                    size: "Grande",
-                    price: "$3.85",
-                    calories: 5,
-                    size2: "16 fl oz",
-                  },
-                  {
-                    size: "Venti",
-                    price: "$3.95",
-                    calories: 5,
-                    size2: "20 fl oz",
-                  },
-                ],
-              },
-              {
                 name: "Featured Dark Roast Caffè Verona®",
                 image: "/Starbucks Odyssey Blend® Clover Vertica™.avif",
-                link: "",
+                link: "Featured-Dark-Roast-Caffè-Verona",
                 sizes: [
                   {
                     size: "Short",
@@ -335,7 +304,7 @@ export const Menu: Category[] = [
               {
                 name: "Featured Dark Roast",
                 image: "/Featured Dark Roast.avif",
-                link: "",
+                link: "Featured-Dark-Roast",
                 sizes: [
                   {
                     size: "Short",
@@ -363,38 +332,7 @@ export const Menu: Category[] = [
                   },
                 ],
               },
-              {
-                // I NOT DO THIS CALORIES
-                name: "Featured Decaf Roast Decaf Pike Place® Roast",
-                image: "/Starbucks Odyssey Blend® Clover Vertica™.avif",
-                link: "",
-                sizes: [
-                  {
-                    size: "Short",
-                    price: "$3.35",
-                    calories: 10,
-                    size2: "8 fl oz",
-                  },
-                  {
-                    size: "Tall",
-                    price: "$3.45",
-                    calories: 15,
-                    size2: "12 fl oz",
-                  },
-                  {
-                    size: "Grande",
-                    price: "$3.85",
-                    calories: 20,
-                    size2: "16 fl oz",
-                  },
-                  {
-                    size: "Venti",
-                    price: "$3.95",
-                    calories: 25,
-                    size2: "20 fl oz",
-                  },
-                ],
-              },
+
             ],
           },
 
@@ -404,7 +342,7 @@ export const Menu: Category[] = [
               {
                 name: "Cappuccino",
                 image: "/Cappuccino.avif",
-                link: "",
+                link: "Cappuccino",
                 sizes: [
                   {
                     size: "Short",
