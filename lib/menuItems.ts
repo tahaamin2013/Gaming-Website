@@ -478,7 +478,7 @@ export const Menu: Category[] = [
                 // Make The Folder
                 name: "Honey Almondmilk Flat White",
                 image: "/Honey Almondmilk Flat White.avif",
-                link: "",
+                link: "Honey-Almondmilk-Flat-White",
                 sizes: [
                   {
                     size: "Short",
@@ -515,7 +515,7 @@ export const Menu: Category[] = [
               {
                 name: "Lavender Oatmilk Latte",
                 image: "/Lavender Oatmilk Latte.avif",
-                link: "",
+                link: "/Lavender-Oatmilk-Latte",
                 sizes: [
                   {
                     size: "Short",
@@ -546,7 +546,7 @@ export const Menu: Category[] = [
               {
                 name: "Oleato™ Caffé Latte with Oatmilk",
                 image: "/Oleato™ Caffé Latte with Oatmilk.avif",
-                link: "",
+                link: "Oleato-Caffé-Latte-with-Oatmilk",
                 sizes: [
                   {
                     size: "Short",
@@ -577,7 +577,7 @@ export const Menu: Category[] = [
               {
                 name: "Caffè Latte",
                 image: "/Caffè Latte.avif",
-                link: "",
+                link: "Caffè-Latte",
                 sizes: [
                   {
                     size: "Short",
@@ -608,7 +608,7 @@ export const Menu: Category[] = [
               {
                 name: "Cinnamon Dolce Latte",
                 image: "/Cinnamon Dolce Latte.avif",
-                link: "",
+                link: "Cinnamon-Dolce-Latte",
                 sizes: [
                   {
                     size: "Short",
@@ -640,7 +640,7 @@ export const Menu: Category[] = [
               {
                 name: "Starbucks® Blonde Vanilla Latte",
                 image: "/Starbucks® Blonde Vanilla Latte.avif",
-                link: "",
+                link: "Starbucks-Blonde-Vanilla-Latte",
                 sizes: [
                   {
                     size: "Short",
@@ -676,7 +676,7 @@ export const Menu: Category[] = [
               {
                 name: "Caramel Macchiato",
                 image: "/Caramel Macchiato.avif",
-                link: "",
+                link: "Caramel-Macchiato",
                 sizes: [
                   {
                     size: "Short",
@@ -712,7 +712,7 @@ export const Menu: Category[] = [
               {
                 name: "Caffè Mocha",
                 image: "/Caffè Mocha.avif",
-                link: "",
+                link: "Caffè-Mocha",
                 sizes: [
                   {
                     size: "Short",
@@ -743,7 +743,7 @@ export const Menu: Category[] = [
               {
                 name: "White Chocolate Mocha",
                 image: "/White Chocolate Mocha.avif",
-                link: "",
+                link: "White-Chocolate-Mocha",
                 sizes: [
                   {
                     size: "Short",
@@ -780,7 +780,7 @@ export const Menu: Category[] = [
               {
                 name: "Coffee Traveler - Veranda Blend®",
                 image: "/Box.avif",
-                link: "",
+                link: "Coffee-Traveler-Veranda-Blend",
                 sizes: [
                   {
                     size: "Short",
@@ -793,7 +793,7 @@ export const Menu: Category[] = [
               {
                 name: "Coffee Traveler - Dark Roast",
                 image: "/Box.avif",
-                link: "",
+                link: "Coffee-Traveler-Dark-Roast",
                 sizes: [
                   {
                     size: "Short",
@@ -806,7 +806,7 @@ export const Menu: Category[] = [
               {
                 name: "Coffee Traveler - Pike Place® Roast",
                 image: "/Box.avif",
-                link: "",
+                link: "Coffee-Traveler-Pike Place-Roast",
                 sizes: [
                   {
                     size: "Short",
@@ -819,7 +819,7 @@ export const Menu: Category[] = [
               {
                 name: "Coffee Traveler - Decaf Pike Place® Roast",
                 image: "/Box.avif",
-                link: "",
+                link: "Coffee-Traveler-Decaf-Pike-Place-Roast",
                 sizes: [
                   {
                     size: "Short",
@@ -843,8 +843,10 @@ export const Menu: Category[] = [
             category: "Cold Brews",
             products: [
               {
+                // Make The Folderq
                 name: "White Chocolate Macadamia Cream Cold Brew",
                 image: "/White Chocolate Macadamia Cream Cold Brew.avif",
+                link: "White0-Chocolate-Macadamia-Cream-Cold-Brew",
                 sizes: [
                   {
                     size: "Tall",
@@ -871,39 +873,8 @@ export const Menu: Category[] = [
                     size2: "30 fl oz",
                   },
                 ],
-                link: "",
               },
-              {
-                name: "Cinnamon Caramel Cream Cold Brew",
-                image: "/Cinnamon Caramel Cream Cold Brew.avif",
-                sizes: [
-                  {
-                    size: "Tall",
-                    price: "$4.95",
-                    calories: 200,
-                    size2: "12 fl oz",
-                  },
-                  {
-                    size: "Grande",
-                    price: "$5.45",
-                    calories: 250,
-                    size2: "16 fl oz",
-                  },
-                  {
-                    size: "Venti",
-                    price: "$5.75",
-                    calories: 270,
-                    size2: "20 fl oz",
-                  },
-                  {
-                    size: "Trenta",
-                    price: "$5.95",
-                    calories: 340,
-                    size2: "30 fl oz",
-                  },
-                ],
-                link: "",
-              },
+
               {
                 name: "Salted Caramel Cream Cold Brew",
                 image: "/Salted Caramel Cream Cold Brew.avif",
@@ -933,7 +904,7 @@ export const Menu: Category[] = [
                     size2: "30 fl oz",
                   },
                 ],
-                link: "",
+                link: "Salted-Caramel-Cream-Cold-Brew",
               },
               {
                 name: "Chocolate Cream Cold Brew",
@@ -964,7 +935,7 @@ export const Menu: Category[] = [
                     size2: "30 fl oz",
                   },
                 ],
-                link: "",
+                link: "Chocolate-Cream-Cold-Brew",
               },
 
               {
@@ -996,7 +967,7 @@ export const Menu: Category[] = [
                     size2: "30 fl oz",
                   },
                 ],
-                link: "",
+                link: "Vanilla-Sweet-Cream-Cold-Brew",
               },
 
               {
@@ -1028,7 +999,7 @@ export const Menu: Category[] = [
                     size2: "30 fl oz",
                   },
                 ],
-                link: "",
+                link: "Starbucks-Cold-Brew-Coffee",
               },
             ],
           },
@@ -1053,7 +1024,7 @@ export const Menu: Category[] = [
                     size2: "16 fl oz",
                   },
                 ],
-                link: "",
+                link: "Cinnamon-Caramel-Cream-Nitro-Cold-Brew",
               },
 
               {
@@ -1073,7 +1044,7 @@ export const Menu: Category[] = [
                     size2: "16 fl oz",
                   },
                 ],
-                link: "",
+                link: "Nitro-Cold-Brew",
               },
 
               {
@@ -1081,6 +1052,7 @@ export const Menu: Category[] = [
                 image: "/Vanilla Sweet Cream Nitro Cold Brew.avif",
                 sizes: [
                   {
+                    // nana
                     size: "Tall",
                     price: "$5.75",
                     calories: 70,
@@ -1093,7 +1065,7 @@ export const Menu: Category[] = [
                     size2: "16 fl oz",
                   },
                 ],
-                link: "",
+                link: "Vanilla-Sweet-Cream-Nitro-Cold-Brew",
               },
             ],
           },
@@ -1124,7 +1096,7 @@ export const Menu: Category[] = [
                     size2: "20 fl oz",
                   },
                 ],
-                link: "",
+                link: "Iced-Caffè-Americano",
               },
             ],
           },
@@ -1161,7 +1133,7 @@ export const Menu: Category[] = [
                     size2: "30 fl oz",
                   },
                 ],
-                link: "",
+                link: "Starbucks-Iced-Coffee-Blend",
               },
               {
                 name: "Starbucks® Iced Coffee Blend Clover Vertica™",
@@ -1192,7 +1164,7 @@ export const Menu: Category[] = [
                     size2: "30 fl oz",
                   },
                 ],
-                link: "",
+                link: "Starbucks-Iced-Coffee-Blend-Clover-Vertica",
               },
               {
                 name: "Iced Espresso",
@@ -1223,7 +1195,7 @@ export const Menu: Category[] = [
                     size2: "3 fl oz",
                   },
                 ],
-                link: "",
+                link: "Iced-Espresso",
               },
             ],
           },
@@ -1254,7 +1226,7 @@ export const Menu: Category[] = [
                     size2: "20 fl oz",
                   },
                 ],
-                link: "",
+                link: "Iced-Hazelnut-Oatmilk-Shaken-Espresso",
               },
               {
                 name: "Iced Brown Sugar Oatmilk Shaken Espresso",
@@ -1279,7 +1251,7 @@ export const Menu: Category[] = [
                     size2: "20 fl oz",
                   },
                 ],
-                link: "",
+                link: "Iced-Brown-Sugar-Oatmilk-Shaken-Espresso",
               },
               {
                 name: "Oleato Golden Foam™ Iced Shaken Espresso with Toffeenut",
@@ -1305,7 +1277,7 @@ export const Menu: Category[] = [
                     size2: "20 fl oz",
                   },
                 ],
-                link: "",
+                link: "Oleato-Golden-Foam-Iced-Shaken-Espresso-with-Toffeenut",
               },
 
               {
@@ -1331,7 +1303,7 @@ export const Menu: Category[] = [
                     size2: "20 fl oz",
                   },
                 ],
-                link: "",
+                link: "Iced-Shaken-Espresso",
               },
             ],
           },
@@ -1362,7 +1334,7 @@ export const Menu: Category[] = [
                     size2: "20 fl oz",
                   },
                 ],
-                link: "",
+                link: "Iced-Flat-White",
               },
 
               {
@@ -1388,7 +1360,7 @@ export const Menu: Category[] = [
                     size2: "20 fl oz",
                   },
                 ],
-                link: "",
+                link: "Iced-Honey-Almondmilk-Flat-White",
               },
             ],
           },
@@ -1419,7 +1391,7 @@ export const Menu: Category[] = [
                     size2: "20 fl oz",
                   },
                 ],
-                link: "",
+                link: "Iced-Lavender-Oatmilk-Latte",
               },
               {
                 name: "Iced Starbucks® Blonde Vanilla Latte",
@@ -1444,7 +1416,7 @@ export const Menu: Category[] = [
                     size2: "20 fl oz",
                   },
                 ],
-                link: "",
+                link: "Iced-Starbucks-Blonde-Vanilla-Latte",
               },
               {
                 name: "Iced Caffè Latte",
@@ -1469,7 +1441,7 @@ export const Menu: Category[] = [
                     size2: "20 fl oz",
                   },
                 ],
-                link: "",
+                link: "Iced-Caffè-Latte",
               },
 
               {
