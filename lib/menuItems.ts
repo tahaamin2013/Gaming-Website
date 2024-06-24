@@ -332,7 +332,6 @@ export const Menu: Category[] = [
                   },
                 ],
               },
-
             ],
           },
 
@@ -379,7 +378,7 @@ export const Menu: Category[] = [
               {
                 name: "Espresso",
                 image: "/Espresso.avif",
-                link: "",
+                link: "Espresso",
                 sizes: [
                   {
                     size: "Solo",
@@ -410,7 +409,7 @@ export const Menu: Category[] = [
               {
                 name: "Espresso Con Panna",
                 image: "/Espresso Con Panna.avif",
-                link: "",
+                link: "Espresso-Con-Panna",
                 sizes: [
                   {
                     size: "Solo",
@@ -447,7 +446,7 @@ export const Menu: Category[] = [
               {
                 name: "Flat White",
                 image: "/Flat White.avif",
-                link: "",
+                link: "Flat-White",
                 sizes: [
                   {
                     size: "Short",
@@ -476,6 +475,7 @@ export const Menu: Category[] = [
                 ],
               },
               {
+                // Make The Folder
                 name: "Honey Almondmilk Flat White",
                 image: "/Honey Almondmilk Flat White.avif",
                 link: "",

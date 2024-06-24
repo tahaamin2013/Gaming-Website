@@ -17,3 +17,47 @@ tags:
 Starbucks Veranda Blend® Clover Vertica™ is a great choice for those who enjoy the strong flavor of espresso but prefer a smoother, less concentrated taste. The drink is made by adding hot water to a shot of espresso, creating a delicious and satisfying beverage.
 
 It contains only 15 calories, with virtually no fat, cholesterol, or sugars.The beverage also contains 225 mg of caffeine, making it a great option for a morning kickstart or an afternoon pick-me-up.The coffee’s quality is highlighted by the simplicity of its ingredients, which consist only of water and espresso. A Tall Starbucks Veranda Blend® Clover Vertica™ typically starts at around $2.95, but prices may vary by location.
+
+<div className="tables-container">
+  <div className="table-wrapper">
+    | Ingredients  |  
+    |:-------------|
+    | Water        |
+    | Brewed       |
+    | Espresso     |
+  </div>
+  <div className="table-wrapper">
+    | Nutrition               |                      |  
+    |:------------------------|---------------------:|
+    | Calories                | 15                   |
+    | Total Fat               | 0 g                  |
+    | Saturated Fat           | 0 g                  |
+    | Trans Fat               | 0 g                  |
+    | Cholesterol             | 0 mg                 |
+    | Sodium                  | 10 mg                |
+    | Total Carbohydrates     | 2 g                  |
+    | Dietary Fiber           | 0 g                  |
+    | Sugars                  | 0 g                  |
+    | Protein                 | 1 g                  |
+    | Caffeine                | 225 mg               |
+  </div>
+</div>
+<style jsx>{`
+  .tables-container {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+  .table-wrapper {
+    width: 500px; /* Adjust as needed */
+  }
+  @media (max-width: 768px) {
+    .tables-container {
+      flex-direction: column;
+      gap: 0px; /* Adjust as needed */
+    }
+    .table-wrapper {
+      width: 100%; /* Adjust as needed */
+    }
+  }
+`}</style>
