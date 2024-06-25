@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Navbar from "@/src/components/Navbar";
-import SubMenu from "@/src/components/subMenu";
 import Footer from "@/src/components/footer";
-import Sidebar from "@/src/components/sidebar";
-// import Loading from "@/src/providers/loading";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,7 +25,6 @@ export default function RootLayout({
         <meta name='theme-color' content="#0b7555" />
       <body className={inter.className}>
         {/* <Loading> */}
-          <Navbar />
               {children}
               <Footer />
         {/* </Loading> */}
