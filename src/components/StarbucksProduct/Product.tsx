@@ -2,14 +2,6 @@ import { Menu } from "@/lib/menuItems";
 import ProductContent from "./Productcontent";
 interface Product {
   name: string;
-  sizes?: Size[];
-  // Add other properties as needed
-}
-
-interface Size {
-  size: string;
-  price: string;
-  calories: number;
   // Add other properties as needed
 }
 
